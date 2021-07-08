@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itau</title>
+</head>
+<body>
+    <body>
+
+        <style>
+
+/*! CSS Used from: https://www.itau.com.uy/inst/includes/smartCombo/themes/pela/theme.css?20170531 */
+.sc{border:none;color:#000;position:relative;display:inline-block;text-align:left;margin:0 10px 10px 0;}
+.sc ul{list-style:none outside none;margin:0;padding:0;}
+.sc a{display:block;text-decoration:none;color:#424242;}
+.sc a:hover{color:#F68121;}
+.sc_label a{width:100%;padding:0px;}
+.sc a.sc_optionSelectedClass{color:#F17C1F;}
+.sc .sc_wrapper{background-color:#FFF;display:none;padding:0;text-transform:inherit;z-index:9999;color:#666;border:1px solid #DDD;left:-1px;border-radius:4px;}
+.sc .sc_li{border:1px solid #BBB;border-radius:4px;color:#666;display:block;font-size:12px;height:26px;min-width:70px;line-height:26px;padding:0 6px;transition:border 0.2s linear 0s, box-shadow 0.2s linear 0s;}
+.sc .sc_li:hover{border:1px solid #F17C1F;box-shadow:2px 2px 3px rgba(0, 0, 0, 0.15) inset, 0 0 5px rgba(255, 165, 95, 0.8);outline:0 none;}
+.sc .sc_label{display:block;background:url("https://www.itau.com.uy/inst/includes/smartCombo/themes/pela/arrow-down.png") no-repeat scroll right center #FFF;border:1px solid #BBB;border-radius:4px;color:#666;font-size:12px;height:26px;line-height:26px;padding:0 20px 0 6px;min-width:56px;transition:border 0.2s linear 0s, box-shadow 0.2s linear 0s;cursor:pointer;}
+.sc .sc_label:hover{border:1px solid #F17C1F;box-shadow:2px 2px 3px rgba(0, 0, 0, 0.15) inset, 0 0 5px rgba(255, 165, 95, 0.8);outline:0 none;}
+.sc a.sc_optionSelectedClass{text-decoration:none;}
+/*! CSS Used from: https://www.itau.com.uy/inst/css.css?20190809 */
+*{margin:0;padding:0;}
+img{border:none;}
+footer,header,nav,section{display:block;}
+textarea{resize:none;}
+a{text-decoration:none;}
+.text-center{text-align:center;}
+.clear{width:100%;clear:both;}
+.right{float:right;}
+.none{display:none;}
+.none_i{display:none!important;}
+img{max-width:100%;}
+body{font-family:Arial, 'Helvetica', sans-serif;color:#373D45;font-size:13px;}
+a{color:#373D45;text-decoration:underline;}
+.textoLight{font-weight:normal;}
+.textoCentrado{text-align:center;}
+.textoIzquierda{text-align:left;}
+.textoDerecha{text-align:right;}
+.textoChico{font-size:11px;}
+header{display:block;background:url("https://www.itau.com.uy/inst/imagenes/bgHeader.png") repeat-x scroll left top #F5F4F3;z-index:9999;position:relative;}
+#contLogo{display:block;width:48px;height:48px;float:left;margin:18px 15px;}
+.contBuscador{display:block;float:left;margin:18px 15px 0 0;padding:13px 0 0 0;}
+fieldset.buscador,fieldset.camposAcceso24{border:none;display:block;position:relative;}
+fieldset.buscador legend,fieldset.camposAcceso24 legend{display:none;}
+fieldset.buscador input[type="text"]{width:80px;max-width:130px;padding:0 30px 0 5px;border-radius:11px;color:#666;font-size:11px;background-color:#FFF;border:1px solid #BBB;display:inline-block;font-size:12px;height:22px;line-height:22px;transition:border 0.2s linear 0s, box-shadow 0.2s linear 0s;}
+fieldset.buscador input[type="text"]:focus{border:1px solid #F17C1F;box-shadow:2px 2px 3px rgba(0, 0, 0, 0.15) inset, 0 0 5px rgba(255, 165, 95, 0.8);outline:0 none;}
+fieldset.buscador input[type="submit"],fieldset.buscador input[type="button"]{background:url("https://www.itau.com.uy/inst/imagenes/icoLupa.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);display:block;height:16px;overflow:hidden;padding:0;position:absolute;right:7px;text-indent:-9999px;text-transform:uppercase;top:4px;border:none;width:16px;}
+header nav{border-bottom:1px solid #BBB;display:block;min-width:300px;width:100%;z-index:7777;}
+header nav > ul{display:block;margin:0;width:100%;position:relative;}
+header nav > ul > li:nth-child(even){width:34%;}
+header nav > ul > li:first-child > a{border-left:1px solid #CCC;}
+header nav > ul > li{display:block;float:left;width:33%;}
+header nav > ul > li > a{background:url("https://www.itau.com.uy/inst/imagenes/bgHeader.png") repeat-x scroll left bottom #F5F4F3;border-right:1px solid #CCC;font-size:12px;padding:0 5px;display:block;height:70px;line-height:70px;text-align:center;font-weight:bold;text-decoration:none;color:#373D45;transition:box-shadow 0.3s;}
+header nav > ul > li:hover > a{background-color:#E7E7E7;box-shadow:0 0 6px 0 #999 inset;color:#333;}
+header nav > ul > li > a.dosLineas{line-height:16px;height:32px;padding:19px 5px 19px 5px;}
+.submenu{display:none;position:absolute;top:70px;left:0;width:100%;z-index:9999;}
+header nav > ul > li:hover > .submenu{display:block;}
+#submenuProductos{background-color:#EEE;}
+#submenuProductos h2{font-size:14px;font-weight:bold;color:#FFF;line-height:30px;padding:0 10px;height:30px;text-align:left;}
+#submenuProductos h2 a{font-size:12px;font-weight:bold;display:block;float:right;text-align:right;text-decoration:underline;}
+#submenuProductos .colorNaranja h2{background-color:#F47920;}
+#submenuProductos .colorAzul h2{background-color:#003767;}
+#submenuProductos .colorNaranja h2 a{color:#FDB913;}
+#submenuProductos .colorAzul h2 a{color:#0275DA;}
+#submenuProductos .contSubmenus ul{display:block;float:left;width:50%;font-size:10px;list-style:inside disc;}
+#submenuProductos .contSubmenus.colorNaranja ul{color:#F47920;}
+#submenuProductos .contSubmenus.colorAzul ul{color:#003767;}
+#submenuProductos .contSubmenus ul.listaFondoBlanco{background-color:#FFF;}
+#submenuProductos .contSubmenus ul li{padding-left:10px;}
+#submenuProductos .contSubmenus ul li a{font-size:12px;line-height:24px;height:24px;width:80%;color:#373D45;display:inline-block;text-decoration:none;border-bottom:1px dotted #AAA;}
+#submenuProductos .contSubmenus ul.listaLinkNegrita li a{font-weight:bold;}
+#submenuProductos .contSubmenus ul.listaLinkNegrita li.listaSinEstilo{list-style:none;margin:15px 0 0 5px;}
+#submenuProductos .contSubmenus ul.listaLinkNegrita li a.linkAbriTuCuenta{border-radius:12px;border:solid 1px #bebab9;background-image:linear-gradient(to bottom, #f8f7f5, #e6e5e4);font-family:Arial;font-size:13px;font-weight:bold;color:#363a41;text-decoration:inherit;cursor:pointer;padding:4px 16px;display:inline;background:-webkit-linear-gradient(to bottom, #f8f7f5, #e6e5e4);background:-moz-linear-gradient(to bottom, #f8f7f5, #e6e5e4);background:-o-linear-gradient(to bottom, #f8f7f5, #e6e5e4);background:linear-gradient(to bottom, #f8f7f5, #e6e5e4);}
+#submenuProductos .contSubmenus ul.listaLinkNegrita li a.linkAbriTuCuenta:hover{background:linear-gradient(to bottom, #e6e5e4, #f8f7f5);}
+#submenuProductos .contSubmenus ul.listaLinkNegrita li a.linkAbriTuCuenta:active{background:linear-gradient(to bottom, #e6e5e4, #e6e5e4);}
+#submenuObjetivos{background-color:#F4F3F2;}
+#submenuObjetivos ul{list-style:none;}
+#submenuObjetivos ul li{display:block;}
+#submenuObjetivos ul li a{display:block;padding:10px 20px;position:relative;color:#373D45;text-decoration:none;font-size:12px;border-bottom:1px solid #CBC9C0;}
+#submenuObjetivos ul li a span{font-weight:bold;display:block;font-size:16px;}
+#submenuObjetivos ul li a img{display:block;position:absolute;top:13px;right:20px;}
+#submenuAtencionAlCliente{background-color:#F4F3F2;}
+#submenuAtencionAlCliente h2{background-color:#7A828C;color:#FFF;font-size:14px;font-weight:bold;padding:0 10px;height:30px;line-height:30px;}
+#submenuAtencionAlCliente ul{list-style:none;display:block;}
+#submenuAtencionAlCliente ul li{display:block;}
+#submenuAtencionAlCliente ul li a{font-size:12px;line-height:24px;height:24px;padding:0 10px;color:#373D45;display:block;text-decoration:none;border-bottom:1px dotted #AAA;}
+.acceso24{display:none;padding:20px 5%;width:90%;text-align:left;background-color:#FFF;border-top:1px solid #999;border-bottom:1px solid #999;position:absolute;z-index:890;top:84px;left:0;}
+#sc_segmento .sc_label{background-image:url(https://www.itau.com.uy/inst/imagenes/arrow-down.png);}
+header .acceso24 fieldset input[type="text"]{position:relative;top:1px;}
+#empresaNumDoc{width:90px;}
+.acceso24 input{background-color:#FFF;border:1px solid #BBB;border-radius:4px;color:#666;display:inline-block;font-size:12px;margin:-1px 0 1px 0;height:26px;line-height:26px;text-align:left;padding:0 6px;margin:0 10px 10px 0;transition:border 0.2s linear 0s, box-shadow 0.2s linear 0s;}
+.acceso24 input:focus{border:1px solid #F17C1F;box-shadow:2px 2px 3px rgba(0, 0, 0, 0.15) inset, 0 0 5px rgba(255, 165, 95, 0.8);outline:0 none;}
+header .acceso24 fieldset input[type="submit"]{margin:0!important;}
+header .acceso24 fieldset input[type="submit"]{background:url("https://www.itau.com.uy/inst/imagenes/fondoBtnIngresar.jpg") no-repeat scroll 0 0;border:1px solid #B25900;color:#FFF;height:32px;line-height:29px;box-shadow:0 1px 3px 0 #999;font-size:13px;font-weight:bold;padding:0 6px 0 20px;text-shadow:-1px -1px 0 #B25900;text-align:left;margin:20px 0 10px 0;float:right;}
+header .acceso24 fieldset input[type="submit"]:hover{background:url("https://www.itau.com.uy/inst/imagenes/fondoBtnIngresar.jpg") no-repeat scroll 0 -30px;}
+.ayudaAcceso24-3 a,.ayudaAcceso24-2 a,.ayudaAcceso24 a{font-size:11px;color:#999;line-height:16px;margin-right:24px;}
+.ayudaAcceso24 a:first-child{margin-right:16px;}
+#abrir24hsMobile{display:block;width:93px;background-image:url("https://www.itau.com.uy/inst/imagenes/24.png");height:34px;padding:0;right:20px;text-indent:-99999px;top:27px;z-index:801;overflow:hidden;position:absolute;border:none;border-bottom:none;}
+nav#navFooter{background:url("https://www.itau.com.uy/inst/imagenes/bgMenuBottom.png") repeat-x scroll 0 0 #E6E6E6;border-top:1px solid #CCC;padding:20px 20px 50px 20px;position:relative;}
+nav#navFooter ul li{display:block;padding:0;margin:0;width:50%;float:left;}
+nav#navFooter ul li a{font-size:12px;color:#666;text-decoration:none;}
+nav#navFooter ul li a.linkEmergencias{color:#EE7203;}
+#btnAccesoRapido{bottom:0;display:block;font-size:15px;height:64px;position:absolute;right:0px;width:155px;z-index:900;background:url("https://www.itau.com.uy/inst/imagenes/bgMenuBottom.png") repeat-x scroll left center rgba(0, 0, 0, 0);background:url("https://www.itau.com.uy/inst/imagenes/bgMenuBottom.png") repeat-x scroll 0 0 #E6E6E6;border:1px solid #CCC;border-radius:5px 5px 0 0;color:#666;font-weight:bold;text-shadow:1px 1px 0 #FFF;text-decoration:none;transition-duration:0.3s;}
+#btnAccesoRapido:hover{color:#333;text-decoration:underline;}
+#btnAccesoRapido span{display:block;padding:24px 5px 23px 30px;text-align:center;width:120px;background:url(https://www.itau.com.uy/inst/imagenes/btnAccesoRapido.png) 8px 25px no-repeat;}
+nav#navFooter ul li#linkPaisesFooter{position:absolute;bottom:23px;right:173px;display:block;width:25px;height:16px;margin:0;padding:0;line-height:16px;}
+nav#navFooter ul li#linkPaisesFooter > a{display:block;padding:0;margin:0;width:25px;height:16px;}
+nav#navFooter ul li#linkPaisesFooter > a img{display:block;}
+.wrapper{width:90%;max-width:980px;margin:0 auto;display:block;}
+.marginT50{padding-top:50px;}
+h1{font-size:26px;font-weight:bold;color:#373D45;margin-bottom:13px;}
+h2{font-size:21px;}
+h1,h2,h3{line-height:100%;}
+h6{font-size:12px;font-weight:bold;color:#F47920;line-height:18px;}
+.contImagenSeccion{display:block;margin-bottom:20px;}
+.contImagenSeccion img{margin-bottom:13px;vertical-align:top;}
+.contImagenSeccion p{line-height:20px;}
+.contTitulo{position:relative;}
+.contTitulo h2{color:#F47920;font-weight:normal;margin-bottom:20px;font-size:21px;}
+.contTitulo h1{color:#252220;display:inline-block;font-size:28px;font-weight:bold;line-height:1.71;}
+.secondary-dark-button{background-color:#363d45;background:-moz-linear-gradient(to bottom, #7b838c, #363d45 60%, #363d45);background:-o-linear-gradient(to bottom, #7b838c, #363d45 60%, #363d45);background:-webkit-linear-gradient(to bottom, #7b838c, #363d45 60%, #363d45);background:linear-gradient(to bottom, #7b838c, #363d45 60%, #363d45);border-radius:5px;border:solid 0.8px #494f57;box-shadow:0 1px 2px 0 rgba(0, 0, 0, 0.29);color:#FFF;color:#ffffff;cursor:pointer;display:inline-block;float:right;font-family:Arial;font-weight:bold;margin-top:8px;padding:6px 20px;position:relative;text-align:center;text-decoration:none;text-shadow:0 0 3px #000;width:auto;}
+.empujaTabs{display:block;padding:30px 0;}
+.tabs{width:100%;float:none;list-style:none;position:relative;margin:0;text-align:left;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+.tabs > li{float:left;display:block;width:25%;padding-right:.5%;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+.tabs > li.noMarginRight{margin-right:0;padding-right:0;}
+.tabs input[type="radio"]{position:absolute;top:-9999px;left:-9999px;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+.tabs label{display:block;z-index:50;padding:0;margin:0;text-align:center;border-radius:4px 4px 0 0;font-size:15px;line-height:60px;height:60px;background:url(https://www.itau.com.uy/inst/imagenes/fondoTabs.jpg) repeat-x bottom left;cursor:pointer;position:relative;top:0;color:#373D45;border-top:1px solid transparent;border-left:1px solid transparent;border-right:1px solid transparent;border-bottom:1px solid #BBB;-moz-transition:all 0.2s ease-in-out;-o-transition:all 0.2s ease-in-out;-webkit-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+.tabs label:hover{color:#F47920;}
+.tabs .tab-content{z-index:2;display:none;overflow:hidden;font-size:17px;line-height:25px;padding:25px 0;width:100%;position:absolute;top:59px;left:0;border-top:1px solid #BBB;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+.tabs [id^="tab"]:checked + label{border-color:#BBB;border-bottom:1px solid #FFF;background-image:none;background-color:#FFF;color:#F47920;}
+.tabs [id^="tab"]:checked ~ [id^="tab-content"]{display:block;}
+.boxBeneficio{display:block;float:left;width:48%;padding:5px 0 0 0;text-decoration:none;margin-bottom:20px;max-width:216px;height:291px;}
+.boxBeneficio:nth-child(odd){margin-right:4%;}
+.boxBeneficio img{border-radius:10px;max-width:100%;display:block;margin-bottom:6px;}
+.boxBeneficio .tituloBeneficio{color:#F47920;font-size:14px;font-weight:bold;display:block;line-height:18px;height:40px;}
+.boxBeneficio .btnGrisComun{color:#FFF;font-size:12px;font-weight:bold;width:auto;padding:0 20px;text-shadow:1px -1px 1px #000;background:url(https://www.itau.com.uy/inst/imagenes/fondoBtnGrisComun.jpg) top left repeat-x;border-radius:4px;border:1px solid #9BA1AB;height:22px;line-height:22px;display:block;float:left;}
+.tituloBeneficioAmpliado{font-size:20px;color:#F47920;margin:0;}
+.boxBeneficiosAmpliados{display:block;border-top:1px solid #BBB;margin-top:20px;padding-top:20px;}
+.boxBeneficioAmpliado{overflow:auto;display:block;float:left;width:48%;margin-right:4%;min-width:220px;height:100px;}
+.contImgBeneficioAmpliado{display:block;float:left;width:76px;padding-top:10px;margin:0 15px 30px 0;}
+.contImgBeneficioAmpliado img{display:block;margin:0 auto;}
+.contImgBeneficioDestacado{display:block;float:left;width:150px;padding-top:10px;margin:0 15px 30px 0;}
+.contImgBeneficioDestacado img{display:block;margin:0 auto;}
+.basesBeneficioDestacado{font-size:12px;display:block;margin:20px 0;}
+.overlayPagosFooter,.overlayCotizaciones,.overlayPaisesFooter{display:none;background:url(https://www.itau.com.uy/inst/imagenes/fondoOverCoti.png) top left repeat;position:fixed;width:100%;height:100%;z-index:900;top:0;left:0;}
+#conPagosFooter{display:block;position:absolute;top:50%;left:50%;margin-left:-70px;margin-top:-12%;border-radius:10px;width:140px;background-color:#FFF;box-shadow:0 0 1px #000;-moz-box-sizing:border-box;box-sizing:content-box;}
+#conPagosFooter a{display:block;line-height:30px;height:30px;border-bottom:1px solid #EEE;padding:0 10px 0 10px!important;}
+#conPagosFooter a:last-child{border-bottom:none;}
+#conPagosFooter a#cerrarPagos{text-align:right;text-decoration:underline;font-size:.8em;opacity:.8;height:20px;line-height:20px;}
+#contCotizaciones{display:block;position:absolute;top:50%;left:50%;margin-left:-110px;margin-top:-12%;border-radius:10px;overflow:hidden;width:220px;box-shadow:0 0 1px #000;-moz-box-sizing:border-box;box-sizing:content-box;}
+#conPaisesFooter{display:block;position:absolute;top:50%;left:50%;margin-left:-70px;margin-top:-12%;border-radius:10px;width:140px;background-color:#FFF;box-shadow:0 0 1px #000;-moz-box-sizing:border-box;box-sizing:content-box;}
+#conPaisesFooter a{display:block;line-height:30px;height:30px;border-bottom:1px solid #EEE;padding:0 10px;}
+#conPaisesFooter a:last-child{border-bottom:none;}
+#conPaisesFooter a#cerrarPaises{position:absolute;display:block;text-align:right;line-height:30px;padding:0 10px;top:-30px;right:0;color:#FFF;border-bottom:none;}
+#conPaisesFooter a img{display:block;float:left;margin-right:10px;margin-top:6px;}
+#contCotizaciones .topCotizaciones{display:block;background:url(https://www.itau.com.uy/inst/imagenes/fondoCoti.jpg) bottom left repeat-x #ECECEC;position:relative;padding:10px 25px 0 25px;}
+#contCotizaciones .topCotizaciones h3{font-size:12px;font-weight:bold;color:#F47920;line-height:28px;}
+#contCotizaciones .bottomCotizaciones{display:block;background-color:#EBEBEB;position:relative;padding:0 25px 10px 25px;}
+#contCotizaciones .bottomCotizaciones p{margin-top:6px;}
+#contCotizaciones table{font-size:11px;width:100%;text-align:right;}
+#contCotizaciones table th{font-weight:bold;text-align:center;}
+#contCotizaciones table th.textoIzquierda{text-align:left;}
+#contCotizaciones table th.textoDerecha{text-align:right;}
+#contCotizaciones table .textoIz{text-align:left;}
+#contCotizaciones table .tabla33{width:33%;}
+#contCotizaciones table .tabla34{width:34%;}
+#contCotizaciones table .tabla17{width:17%;}
+#contCotizaciones table .tabla16{width:16%;}
+#contCotizaciones .textoChico{color:#7A828C;font-size:10px;}
+nav#navFooter ul li a#cerrarCoti{display:block;position:absolute;top:5px;right:5px;text-decoration:underline;font-weight:normal;font-size:10px;color:#7A828C;}
+#accesoRapido{display:none;background-color:#F4F3F2;padding:50px 0;}
+#accesoRapido h2{text-align:center;font-weight:normal;color:#7A828C;font-size:26px;}
+.boxLetra h3{display:block;color:#8A919A;border-bottom:1px #8A919A solid;font-size:32px;font-weight:bold;}
+.boxLetra a{text-decoration:none;color:#373D45;line-height:26px;display:block;}
+.overlayMensajes{display:none;opacity:0;position:fixed;width:100%;height:100%;background:url(https://www.itau.com.uy/inst/imagenes/fondoOverCoti.png) top left repeat;z-index:9999;top:0;left:0;}
+.contMensajeRespuesta{opacity:0;display:block;position:absolute;background-color:#FFF;border-radius:10px;border:1px solid #7A828C;padding:40px;max-width:500px;left:50%;top:50%;}
+.contMensajeRespuesta h3{color:#F47920;font-size:18px;font-weight:normal;margin-bottom:20px;}
+.contMensajeRespuesta a{display:block;text-decoration:none;float:right;font-size:12px;font-weight:bold;width:auto;padding:0 20px;background:url(https://www.itau.com.uy/inst/imagenes/fondoBtnBlanco.png) top left repeat-x;border-radius:4px;border:1px solid #C6C9CD;height:28px;line-height:28px;}
+.contMensajeRespuestaChat{text-align:center;background-color:rgb(255, 255, 255);background-image:url("https://www.itau.com.uy/inst/imagenes/backChatPop.png");background-position:center center;background-repeat:no-repeat;background-size:cover;border:1px solid rgb(122, 130, 140);border-radius:20px;display:block;left:50%;max-width:300px;opacity:1;padding:20px 45px;position:absolute;top:50%;width:100%;opacity:0;}
+.formPopUp textarea{background-color:rgba(0, 0, 0, 0);border:1px solid rgb(186, 186, 186);display:block;font-family:arial;font-size:10px;height:35px;margin-bottom:15px;padding:5px;width:96%;}
+.btnNaranja{background-color:rgb(255, 117, 0);border:medium none;border-radius:5px;color:rgb(255, 255, 255);font-size:12px;padding:8px 28px;text-shadow:0.5px 0.5px 0.1px rgb(51, 51, 51);cursor:pointer;}
+.close{background-color:rgb(222, 222, 222);border-radius:5px;color:rgb(108, 109, 113);cursor:pointer;float:right;font-size:14px;font-weight:bolder;line-height:14px;margin-right:-28px;margin-top:-18px;padding:4.5px;text-decoration:none;}
+@media (min-width : 320px){
+header nav > ul > li > a.dosLineas{line-height:16px;height:32px;padding:19px 5px 19px 5px;}
+header nav > ul > li > a.dosLineas br{display:none;}
+#abrir24hsMobile{width:127px;background-image:url("https://www.itau.com.uy/inst/imagenes/24.png");}
+}
+@media (max-width : 320px){
+.secondary-dark-button{padding:6px 10px;}
+}
+@media (min-width : 360px){
+header nav > ul > li > a.dosLineas{line-height:70px;height:70px;padding:0 5px 0 5px;}
+header nav > ul > li > a.dosLineas br{display:none;}
+#abrir24hsMobile{width:127px;background-image:url("https://www.itau.com.uy/inst/imagenes/24.png");}
+}
+@media (max-width : 460px){
+.boxBeneficio .tituloBeneficio{font-size:12px;}
+}
+@media (max-width : 600px){
+.tabs label{line-height:28px;}
+#btnOpenChat{height:60px!important;bottom:50px;width:60px!important;}
+}
+@media (min-width : 600px){
+header nav > ul > li{position:relative;}
+header nav > ul > li > a{font-size:15px;}
+nav#navFooter ul li{width:25%;}
+.submenu{width:300px;min-width:100%;}
+#submenuAtencionAlCliente{width:100%;}
+header .acceso24 fieldset input[type="text"]{position:relative;top:0;}
+fieldset.buscador input[type="text"]{width:130px;}
+.boxBeneficio{width:32%;margin-right:2%;}
+.boxBeneficio:nth-child(odd){margin-right:2%;}
+.boxBeneficio:nth-child(3n){margin-right:0;}
+}
+@media (max-width : 800px){
+#btnOpenChat{height:120px;bottom:50px;width:95px;}
+}
+@media (min-width : 1000px){
+section{padding-bottom:60px;}
+.onlyMobile{display:none;}
+header{height:83px;border-bottom:1px solid #BBB;}
+header nav{float:left;width:auto;margin-left:20px;}
+header nav > ul > li,header nav > ul > li:nth-child(2n){width:auto;}
+header nav > ul > li > a{padding:0 12px;font-size:15px;line-height:83px;height:83px;padding:0 10px;}
+header nav > ul > li > a.dosLineas{line-height:83px;height:83px;padding:0 10px;}
+header nav > ul > li > a.dosLineas br{display:none;}
+.contBuscador{margin-left:0;}
+.submenu{top:83px;box-shadow:0 1px 6px 0 rgba(0, 0, 0, 0.3);}
+#submenuAtencionAlCliente{width:300px;}
+#submenuProductos{width:400px;}
+#submenuProductos .contSubmenus ul{padding:15px 0;}
+#submenuProductos .contSubmenus ul li a{line-height:20px;height:20px;}
+#submenuProductos .contSubmenus ul li a,#submenuAtencionAlCliente ul li a{border-bottom:none;}
+#submenuProductos .contSubmenus ul li a:hover,#submenuAtencionAlCliente ul li a:hover{text-decoration:underline;}
+#submenuObjetivos ul li a{padding:15px;}
+#submenuObjetivos ul li a img{top:17px;}
+#submenuObjetivos ul li a span{font-size:12px;}
+#submenuObjetivos ul li a:hover{background-color:#EEE;color:#000;}
+#contLogo{padding-right:0;}
+footer{width:100%;display:block;z-index:800;}
+nav#navFooter{padding:0;display:block;height:30px;padding-top:14.5px;padding-bottom:14.5px;}
+nav#navFooter ul{list-style:none;}
+nav#navFooter ul li{display:block;margin:0 0 0 6px;width:inherit;}
+nav#navFooter ul li a{height:30px;line-height:30px;padding:0 5px;font-size:11px;}
+nav#navFooter ul li a.linkEmergencias{color:#EE7203;font-weight:600;}
+nav#navFooter ul li a:hover{text-decoration:underline;color:#333;}
+fieldset.buscador input[type="text"]{width:80px;}
+.boxBeneficio{width:22%;margin-right:4%;}
+.boxBeneficio:nth-child(odd){margin-right:4%;}
+.boxBeneficio:nth-child(3n){margin-right:4%;}
+.boxBeneficio:nth-child(4n){margin-right:0;}
+.boxBeneficioAmpliado{width:22%;margin-right:3%;}
+#navFooter ul li{position:relative;}
+.overlayPagosFooter,.overlayCotizaciones,.overlayPaisesFooter{background:none;overflow:hidden;position:absolute;width:230px;height:0;top:auto;bottom:31px;left:50%;margin-left:-115px;}
+.overlayPaisesFooter{bottom:21px;}
+nav#navFooter ul li #contCotizaciones a#cerrarCoti{line-height:12px;}
+#contCotizaciones{top:10px;left:50%;margin-left:-110px;margin-top:auto;border-radius:10px 10px 0 0;}
+#contCotizaciones .bottomCotizaciones{padding-bottom:20px;-moz-box-sizing:border-box;box-sizing:content-box;min-height:160px;}
+#conPaisesFooter{border-radius:10px 10px 0 0;}
+}
+@media (min-width : 1200px){
+#abrir24hsMobile{width:28px;padding:0;top:22px;opacity:0.7;right:8px;background-position:right center;}
+.acceso24{display:block;float:right;position:relative;padding:20px 38px 0 0;top:inherit;left:inherit;width:inherit;background-color:transparent;border:none;}
+header .acceso24 fieldset .sc,header .acceso24 fieldset input[type="text"],header .acceso24 fieldset input[type="password"]{margin:0 3px 0 0;}
+header .acceso24 fieldset input[type="text"],header .acceso24 fieldset input[type="password"]{width:66px;padding:0 3px;}
+header .acceso24 .sc .sc_label{padding:0 18px 0 6px;}
+#sc_segmento{width:166px;}
+header .acceso24 fieldset input[type="submit"]{margin-bottom:0;}
+.ayudaAcceso24-3,.ayudaAcceso24-2,.ayudaAcceso24{padding-right:10px;text-align:left;}
+header nav > ul > li > a{font-size:13px;padding:0 6px;}
+}
+@media (min-width : 1300px){
+header nav > ul > li > a{font-size:15px;padding:0 10px;}
+}
+@media (min-width : 1400px){
+fieldset.buscador input[type="text"]{width:130px;}
+}
+.sc a{white-space:nowrap;}
+.sc .sc_wrapper{width:100%;}
+.boxLetra ul li{display:block;}
+.boxLetra{float:left;margin-right:29px;width:22%;margin-bottom:10px;}
+.boxLetra:nth-child(4n+1){clear:both;}
+#oldie{background-color:#FFE595;color:#444;left:0;line-height:32px;position:relative;text-align:center;top:0;width:100%;z-index:20000;display:none;}
+#webchat{background-color:rgba(0, 0, 0, 0);border:medium none;border-radius:8px!important;bottom:0;height:100%;right:0;width:100%;}
+#resizable{background-color:rgba(0, 0, 0, 0);bottom:75px;height:385px!important;left:auto;position:fixed;right:0;top:auto;width:275px;z-index:901;display:none;}
+#btnOpenChat{background-image:url("https://www.itau.com.uy/inst/imagenes/openChat.png");background-position:center center;background-repeat:no-repeat;background-size:100% auto;border-radius:5px 0 0 5px;cursor:pointer;display:none;height:120px;position:fixed;right:0!important;bottom:75px;width:95px;z-index:900000;}
+.text-center{text-align:center;}
+        </style>
+      
+      
+      
+      
+      
+      
+      <!-- 20181204 Google Tag Manager (noscript) -->
+        <noscript><iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-NK23Q4K"
+            height="0"
+            width="0"
+            style="display:none;visibility:hidden"
+          ></iframe
+        ></noscript>
+        <!-- End 20181204 Google Tag Manager (noscript) -->
+    
+        <!-- Twitter single-event website tag code -->
+        <script src="//platform.twitter.com/oct.js" type="text/javascript"></script>
+        <script type="text/javascript">
+          try {
+            twttr.conversion.trackPid('nw62x', {
+              tw_sale_amount: 0,
+              tw_order_quantity: 0,
+            });
+          } catch (e) {
+            console.log(e);
+          }
+        </script>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style="display:none;"
+            alt=""
+            src="//analytics.twitter.com/i/adsct?txn_id=nw62x&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0"
+          />
+          <img
+            height="1"
+            width="1"
+            style="display:none;"
+            alt=""
+            src="//t.co/i/adsct?txn_id=nw62x&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0"
+          />
+        </noscript>
+        <!-- End Twitter single-event website tag code -->
+        <!-- Facebook Pixel Code -->
+        <script>
+            !function(f,b,e,v,n,t,s){
+            if(f.fbq)return;
+            n=f.fbq=function(){
+                n.callMethod ? n.callMethod.apply(n,arguments):n.queue.push(arguments)
+            };
+            if(!f._fbq)f._fbq=n;
+            n.push=n;
+            n.loaded=!0;
+            n.version='2.0';
+            n.queue=[];
+            t=b.createElement(e);
+            t.async=!0;
+            t.src=v;
+            s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)
+            }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '299015114384284');
+            fbq('track', 'PageView');
+        </script>
+        <noscript>
+            <img
+            height="1"
+            width="1"
+            src="https://www.facebook.com/tr?id=299015114384284&ev=PageView&noscript=1"/>
+        </noscript>
+        <!-- End Facebook Pixel Code -->
+        <div id="oldie">
+          <b>Importante:</b> Tu navegador es incompatible con algunas funcionalidades de nuestro sitio.
+          Actualizalo
+          <a href="http://windows.microsoft.com/es-es/internet-explorer/download-ie" target="_blank">aquí</a>
+        </div>
+        <header style="/*display:none;*/">
+          <h1 id="contLogo">
+            <a href="/" title="Ir al Inicio" target="_self"><img src="imagenes/logo.png" alt="Banco Itaú"></a>
+          </h1>
+          <div class="contBuscador">
+            <fieldset class="buscador">
+              <legend>Buscador</legend>
+              <input type="text" autocomplete="off" placeholder="¿Qué estás buscando?" id="txt_palabra_arriba">
+              <input type="button" id="btn_buscar_arriba" value="buscar">
+            </fieldset>
+          </div>
+          <br class="clear onlyMobile">
+          <nav id="navPrincipal">
+            <ul>
+              <li>
+                <a class="itemNavPrincipal" href="javascript:;" title="Ir a la sección" target="_self">Productos</a>
+                <div class="submenu" id="submenuProductos">
+                  <div class="contSubmenus colorNaranja">
+                    <h2>
+                      Para Ti<a target="_self" title="" href="/inst/paraTi.html">itau.com.uy/parati</a>
+                    </h2>
+                    <ul class="listaFondoBlanco">
+                      <li>
+                        <a href="/inst/paratiCuentaCorriente.html" title="Ir a la seccion" target="_self">Cuenta corriente</a>
+                      </li>
+                      <li>
+                        <a href="/inst/paratiCajaDeAhorro.html" title="Ir a la seccion" target="_self">Caja de ahorro</a>
+                      </li>
+                      <li>
+                        <a href="/inst/empresasCuentaSueldos.html" title="Ir a la seccion" target="_self">Cuenta sueldos</a>
+                      </li>
+                      <li>
+                        <a href="/inst/solicitudcuentaIFS.html" title="Ir a la seccion" target="_self">Cuenta para pagos</a>
+                      </li>
+                      <li>
+                        <a href="/inst/prestamos.html" title="Ir a la seccion" target="_self">Préstamos</a>
+                      </li>
+                      <li>
+                        <a href="/inst/paratiInversiones.html" title="Ir a la seccion" target="_self">Inversiones</a>
+                      </li>
+                      <li>
+                        <a href="/inst/tarjetas.html" title="Ir a la seccion" target="_self">Tarjetas</a>
+                      </li>
+                      <li>
+                        <a href="/inst/seguros.html" title="Ir a la seccion" target="_self">Seguros</a>
+                      </li>
+                      <li>
+                        <a href="/inst/servicios24.html" title="Ir a la seccion" target="_self">Servicios</a>
+                      </li>
+                    </ul>
+                    <ul class="listaLinkNegrita">
+                      <li>
+                        <a href="/inst/personalBank_personal.html" title="Ir a la seccion" target="_self">Itaú <span class="textoLight">Personal Bank</span></a>
+                      </li>
+                      <li class="listaSinEstilo">
+                          <a href="/inst/abriTuCuenta.html" title="Ir a la seccion" target="_self" class="linkAbriTuCuenta">Abrí tu cuenta</a>
+                      </li>
+                      <li class="listaSinEstilo">
+                        <a href="/inst/tarjetas.html?origen=ItauBotonMenu" title="Ir a la seccion" target="_self" class="linkAbriTuCuenta">
+                          Solicitá tu tarjeta
+                        </a>
+                      </li>
+                      <li class="listaSinEstilo">
+                        <a href="/inst/cuentaU25.html?origen=ItauBotonMenu" title="Ir a la seccion" target="_self" class="linkAbriTuCuenta">
+                        Abrí tu cuenta U25
+                        </a>
+                      </li>
+                      <!--<li class="btnPediTuCuentaHeader"><a href="javascript:;" title="Ir a la seccion" target="_self">Pedí tu cuenta</a></li>-->
+                    </ul>
+                    <br class="clear">
+                  </div>
+                  <div class="contSubmenus colorAzul">
+                    <h2>
+                      Para Empresas<a target="_self" title="" href="/inst/paraEmpresas.html">itau.com.uy/paraempresas</a>
+                    </h2>
+                    <ul class="listaFondoBlanco">
+                      <li>
+                        <a href="/inst/empresasCuentaCorriente.html" title="Ir a la seccion" target="_self">Cuenta corriente</a>
+                      </li>
+                      <li>
+                        <a href="/inst/empresasCajaDeAhorro.html" title="Ir a la seccion" target="_self">Caja de ahorro</a>
+                      </li>
+                      <li>
+                        <a href="/inst/empresasCuentaRecaudadora.html" title="Ir a la seccion" target="_self">Cuenta recaudadora</a>
+                      </li>
+                      <li>
+                        <a href="/inst/empresasTarjetas.html" title="Ir a la seccion" target="_self">Tarjetas</a>
+                      </li>
+                      <li>
+                        <a href="/inst/tarjetaAlimentacion.html" title="Ir a la seccion" target="_self">Tarjeta Alimentación</a>
+                      </li>
+                      <li>
+                        <a href="/inst/empresasPrestamos.html" title="Ir a la seccion" target="_self">Préstamos</a>
+                      </li>
+                      <li>
+                        <a href="/inst/empresasAgronegocios.html" title="Ir a la seccion" target="_self">Agronegocios</a>
+                      </li>
+                      <li>
+                        <a href="/inst/empresasInversiones.html" title="Ir a la seccion" target="_self">Inversiones</a>
+                      </li>
+                      <li>
+                        <a href="/inst/empresasComercioExterior.html" title="Ir a la seccion" target="_self">Comercio exterior</a>
+                      </li>
+                      <li>
+                        <a href="/inst/empresasPagoDeSueldos.html" title="Ir a la seccion" target="_self">Pago de sueldos</a>
+                      </li>
+                      <li>
+                        <a href="/inst/empresasPagosElectronicos.html" title="Ir a la seccion" target="_self">Pagos electrónicos</a>
+                      </li>
+                      <li>
+                        <a href="/inst/empresasServicios24.html" title="Ir a la seccion" target="_self">Servicios</a>
+                      </li>
+                    </ul>
+                    <ul class="listaLinkNegrita">
+                      <li>
+                        <a href="/inst/itauPymes.html" title="Ir a la seccion" target="_self"><span class="textoLight">Pymes</span></a>
+                      </li>
+                      <li>
+                        <a href="/inst/itauEmpresas.html" title="Ir a la seccion" target="_self">Itaú <span class="textoLight">Empresas</span></a>
+                      </li>
+                      <!--<li  class="btnPediTuCuentaHeader"><a href="javascript:;" title="Ir a la seccion" target="_self">Pedí tu cuenta empresa</a></li>-->
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a class="itemNavPrincipal dosLineas" href="javascript:;" title="Ir a la sección" target="_self">Tus<br>
+                  objetivos</a>
+                <div class="submenu" id="submenuObjetivos">
+                  <ul>
+                    <li>
+                      <a href="/inst/prestamos-hipotecarios.html" title="Ir a la seccion" target="_self"><span>Mi casa</span>Comprá, reformá y protegé tu hogar
+                        <img src="imagenes/icoMenuCasa.png" alt="Casa" width="28"></a>
+                    </li>
+                    <li>
+                      <a href="/inst/prestamosautomotores.html" title="Ir a la seccion" target="_self"><span>Mi auto</span>Adquirí tu vehículo 0 km<img src="imagenes/icoMenuAuto.png" alt="Casa" width="28"></a>
+                    </li>
+                    <li>
+                      <a href="/inst/objetivosViajes.html" title="Ir a la seccion" target="_self"><span>Mis viajes</span>Descubrí el mundo<img src="imagenes/icoMenuViajes.png" alt="Casa" width="28"></a>
+                    </li>
+                    <li>
+                      <a href="/inst/objetivosProyectos.html" title="Ir a la seccion" target="_self"><span>Mis proyectos</span>Planeá tu futuro tranquilo<img src="imagenes/icoMenuProyectos.png" alt="Casa" width="28"></a>
+                    </li>
+                    <li>
+                      <a href="/inst/objetivosFuturo.html" title="Ir a la seccion" target="_self"><span>Futuro</span>Planeá tu objetivo<img src="imagenes/icoMenuFuturo.png" alt="Casa" width="28"></a>
+                    </li>
+                    <li>
+                      <a href="/inst/objetivosEmpresas.html" title="Ir a la seccion" target="_self"><span>Empresas</span>Desarrollo de tu empresa<img src="imagenes/icoMenuEmpresa.png" alt="Casa" width="28"></a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a class="itemNavPrincipal dosLineas" href="javascript:;" title="Ir a la sección" target="_self">Atención<br>
+                  al cliente</a>
+                <div class="submenu" id="submenuAtencionAlCliente">
+                  <h2>¿Necesitás ayuda?</h2>
+                  <ul>
+                    <li>
+                      <a href="/inst/atencionParaTi.html" title="Ir a la seccion" target="_self">Para Ti</a>
+                    </li>
+                    <li>
+                      <a href="/inst/atencionParaEmpresas.html" title="Ir a la seccion" target="_self">Para Empresas</a>
+                    </li>
+                    <li>
+                      <a href="/inst/AyudaParaTi.html?utm_source=web&amp;utm_medium=menucliente" title="Ir a la seccion" target="_self">¿Necesitás ayuda?</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <br class="clear">
+            </ul>
+          </nav>
+          <a id="abrir24hsMobile" href="javascript:;" title="Acceso 24 horas">Acceso 24horas</a>
+          <div class="acceso24">
+            <form action="https://www.itaulink.com.uy/trx/doLogin" onsubmit="return validar(this);" autocomplete="off" method="post" id="acceso_hb" target="_self">
+              <fieldset class="camposAcceso24">
+                <legend>Acceso 24horas</legend>
+                <select id="segmento" name="segmento" style="display: none;">
+                  <option value="panelPersona">Personas/Comercios</option>
+                  <option value="panelEmpresa">Consultas</option>
+                  <option value="panelConsulta">Empresas</option>
+                </select><div id="sc_segmento" class="sc">	<div class="sc_label">		<a href="javascript:;" title="Personas/Comercios		" class="selected">Personas/Comercios		</a>	</div>	<div class="sc_wrapper" style="position: absolute; display: none;">		<ul class="sc_ul"><li class="sc_li" val="panelPersona">	<a href="javascript:;" inheritedvalue="panelPersona" index="0" class="sc_optionSelectedClass">		<span>Personas/Comercios		</span>	</a></li><li class="sc_li" val="panelEmpresa">	<a href="javascript:;" inheritedvalue="panelEmpresa" index="1">		<span>Consultas		</span>	</a></li><li class="sc_li" val="panelConsulta">	<a href="javascript:;" inheritedvalue="panelConsulta" index="2">		<span>Empresas		</span>	</a></li>		</ul>	</div></div>
+                <input id="campoEmpresa" type="text" autocomplete="off" placeholder="Empresa" name="empresa_aux" maxlength="8" class="none_i">
+                <input id="passwordEmpresa" type="password" name="pwd_empresa" placeholder="Contraseña" maxlength="8" autocomplete="off" class="none_i">
+                <input id="campoUsuarioEmpresa" type="text" autocomplete="off" placeholder="Usuario" name="usuario_aux" maxlength="15" class="none_i">
+                <select name="tipo_documento" id="tipoDoc" class="panelPersona" style="display: none;">
+                  <option value="1">C.I.</option>
+                  <option value="2">Pasaporte</option>
+                  <option value="3">DNI</option>
+                  <option value="4">Otros</option>
+                </select><div id="sc_tipoDoc" class="sc">	<div class="sc_label">		<a href="javascript:;" title="C.I.		" class="selected">C.I.		</a>	</div>	<div class="sc_wrapper" style="position: absolute; display: none;">		<ul class="sc_ul"><li class="sc_li" val="1">	<a href="javascript:;" inheritedvalue="1" index="0" class="sc_optionSelectedClass">		<span>C.I.		</span>	</a></li><li class="sc_li" val="2">	<a href="javascript:;" inheritedvalue="2" index="1">		<span>Pasaporte		</span>	</a></li><li class="sc_li" val="3">	<a href="javascript:;" inheritedvalue="3" index="2">		<span>DNI		</span>	</a></li><li class="sc_li" val="4">	<a href="javascript:;" inheritedvalue="4" index="3">		<span>Otros		</span>	</a></li>		</ul>	</div></div>
+                <!--
+            <input id="documento" type="text" autocomplete="nope" name="nro_documento" placeholder="Documento"   maxlength="12" />
+    
+            <input id="pass" type="password" name="pass" placeholder="Contraseña"   maxlength="8"/>
+            -->
+                <input id="empresaNumDoc" type="text" autocomplete="off" name="empresaNumDoc" placeholder="RUT/No. Cliente" maxlength="12" class="none_i">
+                <input id="username" type="text" autocomplete="off" name="username" placeholder="Usuario" maxlength="50" class="none_i">
+                <input id="passwd" type="password" name="passwd" placeholder="Contraseña" autocomplete="off" class="none_i">
+                <input id="documento" type="text" autocomplete="off" name="nro_documento" placeholder="Documento" maxlength="12" class="">
+                <input id="pass" type="password" name="pass" placeholder="Contraseña" maxlength="8" autocomplete="off" class="">
+                <input id="vprocesar" type="submit" value="Ingresar">
+                <input type="hidden" name="password" id="password">
+                <input type="hidden" name="pwd_usuario" id="pwd_usuario">
+                <input type="hidden" value="" name="empresa">
+                <input type="hidden" value="" name="usuario">
+                <input type="hidden" value="login" name="id">
+                <input type="hidden" value="" name="tipo_usuario">
+                <input type="hidden" value="" name="redirect">
+                <input type="hidden" value="eyJmaW5nZXJwcmludCI6IjdmYzJhODcxZmYzZTAyYzFkZjVlYjgwZTcyZThhNTEyIiwiZmluZ2VycHJpbnRJbmZvIjp7InJhbmRvbVNlZWQiOiIzZjBiOTJmNS0xZTY1LTRjMjAtYmVjOC0xYjRiOWIzNGFlZmEiLCJsYW5ndWFnZSI6InB0LVBUIiwiY29sb3JEZXB0aCI6MjQsInRpbWV6b25lT2Zmc2V0IjoxODAsImhhc1Nlc3Npb25TdG9yYWdlIjp0cnVlLCJoYXNMb2NhbFN0b3JhZ2UiOnRydWUsImhhc0luZGV4ZWREYiI6dHJ1ZSwiaGFzQWRkQmVoYXZpb3IiOmZhbHNlLCJoYXNPcGVuRGF0YWJhc2UiOnRydWUsIm5hdmlnYXRvckNwdUNsYXNzIjoibmF2aWdhdG9yQ3B1Q2xhc3M6IHVua25vd24iLCJuYXZpZ2F0b3JQbGF0Zm9ybSI6Im5hdmlnYXRvclBsYXRmb3JtOiBNYWNJbnRlbCIsImRvTm90VHJhY2siOiJkb05vdFRyYWNrOiB1bmtub3duIiwicGx1Z2lucyI6IkNocm9tZSBQREYgUGx1Z2luOjpQb3J0YWJsZSBEb2N1bWVudCBGb3JtYXQ6OmFwcGxpY2F0aW9uL3gtZ29vZ2xlLWNocm9tZS1wZGZ+cGRmO0Nocm9tZSBQREYgVmlld2VyOjo6OmFwcGxpY2F0aW9uL3BkZn5wZGY7TmF0aXZlIENsaWVudDo6OjphcHBsaWNhdGlvbi94LW5hY2x+LGFwcGxpY2F0aW9uL3gtcG5hY2x+IiwiaGFzQWRCbG9jayI6ZmFsc2UsImhhc0xpZWRMYW5ndWFnZXMiOmZhbHNlLCJoYXNMaWVkUmVzb2x1dGlvbiI6ZmFsc2UsImhhc0xpZWRPcyI6ZmFsc2UsImZvbnRzIjoiQW1lcmljYW4gVHlwZXdyaXRlcjtBbmRhbGUgTW9ubztBcHBsZSBDaGFuY2VyeTtBcHBsZSBDb2xvciBFbW9qaTtBcHBsZSBTRCBHb3RoaWMgTmVvO0FyaWFsO0FyaWFsIEJsYWNrO0FyaWFsIEhlYnJldztBcmlhbCBOYXJyb3c7QXJpYWwgUm91bmRlZCBNVCBCb2xkO0FyaWFsIFVuaWNvZGUgTVM7QVZFTklSO0F5dXRoYXlhO0JhbmdsYSBTYW5nYW0gTU47QmFza2VydmlsbGU7QmF1aGF1cyA5MztCaWcgQ2FzbG9uO0JvZG9uaSA3MjtCb2RvbmkgNzIgT2xkc3R5bGU7Qm9kb25pIDcyIFNtYWxsY2FwcztCb29rc2hlbGYgU3ltYm9sIDc7QnJhZGxleSBIYW5kO0JydXNoIFNjcmlwdCBNVDtDaGFsa2JvYXJkO0NoYWxrYm9hcmQgU0U7Q2hhbGtkdXN0ZXI7Q29jaGluO0NvbWljIFNhbnMgTVM7Q29wcGVycGxhdGU7Q291cmllcjtDb3VyaWVyIE5ldztEZXZhbmFnYXJpIFNhbmdhbSBNTjtEaWRvdDtFbmdsaXNoIDExMSBWaXZhY2UgQlQ7RXVwaGVtaWEgVUNBUztGdXR1cmE7R2VlemEgUHJvO0dlbmV2YTtHZW9yZ2lhO0dlb1NsYWIgNzAzIEx0IEJUO0dlb1NsYWIgNzAzIFhCZCBCVDtHaWxsIFNhbnM7R3VqYXJhdGkgU2FuZ2FtIE1OO0d1cm11a2hpIE1OO0hlaXRpIFNDO0hlaXRpIFRDO0hlbHZldGljYTtIZWx2ZXRpY2EgTmV1ZTtIaXJhZ2lubyBLYWt1IEdvdGhpYyBQcm9OO0hpcmFnaW5vIE1pbmNobyBQcm9OO0hvZWZsZXIgVGV4dDtIdW1hbnN0IDUyMSBDbiBCVDtJbXBhY3Q7S2FpbGFzYTtLYW5uYWRhIFNhbmdhbSBNTjtLcnVuZ3RoZXA7TFVDSURBIEdSQU5ERTtNYWxheWFsYW0gU2FuZ2FtIE1OO01hcmlvbjtNYXJrZXIgRmVsdDtNaWNyb3NvZnQgU2FucyBTZXJpZjtNb2Rlcm4gTm8uIDIwO01vbmFjbztOYWRlZW07Tm90ZXdvcnRoeTtPUFRJTUE7T3JpeWEgU2FuZ2FtIE1OO1BhbGF0aW5vO1BhcHlydXM7UGxhbnRhZ2VuZXQgQ2hlcm9rZWU7Um9ja3dlbGw7U2F2b3llIExFVDtTaW5oYWxhIFNhbmdhbSBNTjtTa2lhO1NuZWxsIFJvdW5kaGFuZDtUYWhvbWE7VGFtaWwgU2FuZ2FtIE1OO1RlbHVndSBTYW5nYW0gTU47VGhvbmJ1cmk7VGltZXM7VGltZXMgTmV3IFJvbWFuO1RyZWJ1Y2hldCBNUztVbml2ZXJzIENFIDU1IE1lZGl1bTtWZXJkYW5hO1dpbmdkaW5ncztXaW5nZGluZ3MgMjtXaW5nZGluZ3MgMztaYXBmaW5vIiwiY3JjQ2FudmFzIjoiZTVlYTQ1NTQiLCJjcmNXZWJHbCI6ImZkZjA3MTgzIiwic2NyZWVuUmVzb2x1dGlvbkluZm8iOnsic2NyZWVuSGVpZ2h0Ijo5MDAsInNjcmVlbldpZHRoIjoxNDQwLCJhdmFpbGFibGVIZWlnaHQiOjgyMCwiYXZhaWxhYmxlV2lkdGgiOjE0NDB9fSwic3lzdGVtSW5mbyI6eyJ1YSI6Ik1vemlsbGEvNS4wIChNYWNpbnRvc2g7IEludGVsIE1hYyBPUyBYIDEwXzE0XzYpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS85MS4wLjQ0NzIuMTE0IFNhZmFyaS81MzcuMzYiLCJicm93c2VyIjp7Im5hbWUiOiJDaHJvbWUiLCJ2ZXJzaW9uIjoiOTEuMC40NDcyLjExNCIsIm1ham9yIjoiOTEifSwiZW5naW5lIjp7InZlcnNpb24iOiI1MzcuMzYiLCJuYW1lIjoiV2ViS2l0In0sIm9zIjp7Im5hbWUiOiJNYWMgT1MiLCJ2ZXJzaW9uIjoiMTAuMTQuNiJ9LCJkZXZpY2UiOnt9LCJjcHUiOnt9fX0=" name="bfp">
+                <input type="hidden" value="S" name="bfpstatus">
+                <p class="ayudaAcceso24" style="display: block;">
+                  <!-- personas/comercios -->
+                  <a id="registrate" href="https://www.itaulink.com.uy/trx/solicitar_ingreso" title="">Registrate</a>
+                  <a id="recuperar-contrasena" href="https://www.itaulink.com.uy/trx/solicitar_ingreso" title="" class="" target="_blank">Olvidé mi contraseña</a>
+                </p>
+                <p class="ayudaAcceso24-3" style="display: none;">
+                  <!-- empresas -->
+                  <a href="https://www.itaulinkempresa.com.uy/ileinter/suscripcion" target="_blank">Adherirse a Itaú/Link Empresa</a>
+                  <a href="https://www.itaulinkempresa.com.uy/ileinter/resetPassword" target="_blank" title="">Olvidé mi contraseña</a>
+                </p>
+                <p class="ayudaAcceso24-2" style="display: none;">
+                  <!-- consultas -->
+                  <a href="https://www.itaulink.com.uy/trx/primer_ingreso/paso_1" title="" target="_blank">¿Ingresás por primera vez?</a>
+                  <a href="javascript:;" title="" class="btnOlvide">Olvidé mi contraseña</a>
+                </p>
+              </fieldset>
+            </form>
+          </div>
+        </header>
+        <!-- Fin HEADER  -->
+      
+    
+    <!-- CONTENIDO  -->
+    <section class="seccionEstatica" style="min-height: 85px;">
+      <!-- ITEMS -->
+      <div id="items" style="">
+        <div class="wrapper marginT50">
+          <div class="contTitulo">
+            <h1>Beneficios</h1>
+            <a class="secondary-dark-button" title="Ir a la sección" href="/inst/tarjetas.html?origen=ItauBotonBeneficios" target="_self">Solicitá tu tarjeta</a>
+          </div>
+          <ul class="tabs">
+            <li style="width: 33.3333%;">
+              <input type="radio" name="tabs" id="tab1" checked="" class="tabs_input">
+              <label for="tab1" data-hash="tarjetas-credito">Tarjetas de crédito</label>
+              <div id="tab-content1" class="tab-content">
+          <a class="boxBeneficio btn_href" href="https://www.tallerdeinformatica.edu.uy/" title="Ampliar" target="_blank" data-item_id="benef_3964" data-final_item_id="undefined">
+            <img src="imagenes/taller.jpeg" alt="Foto">
+            <span class="tituloBeneficio">50% de descuento en todos nuestros cursos</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_href" href="https://www.itau.com.uy/inst/beneficiosexclusivos.html" title="Ampliar" target="_blank" data-item_id="benef_703" data-final_item_id="undefined">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_4189584_216x216.jpg" alt="Foto">
+            <span class="tituloBeneficio">25% menos tarjetas Oro, Platinum, Infinite y Black</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_final_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_4882" data-final_item_id="final_3822">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_419531_iPLACE216x216.jpg" alt="Foto">
+            <span class="tituloBeneficio">24 cuotas sin recargo con tarjetas de crédito Visa</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_href" href="http://www.antel.com.uy/web/iphone-itau" title="Ampliar" target="_blank" data-item_id="benef_3422" data-final_item_id="undefined">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_2421395_BANNERiphoneantelsolologo216X216.jpg" alt="Foto">
+            <span class="tituloBeneficio">Financiá tu compra de iPhone hasta en 24 cuotas</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_href" href="https://www.clubelpais.com.uy/dia-del-padre/ " title="Ampliar" target="_blank" data-item_id="benef_1522" data-final_item_id="undefined">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_1357821_ClubElPais216x21613.jpg" alt="Foto">
+            <span class="tituloBeneficio">10% adicional al descuento de Club El País </span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_grupo_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_1682" data-final_item_id="final_168">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_681984_bannerssolotextomoda216x216.jpg" alt="Foto">
+            <span class="tituloBeneficio">25% menos en moda - Día del padre</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_final_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_962" data-final_item_id="final_484">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_689980_BANNERgrupocarrascocarrascosolologo216x216.jpg" alt="Foto">
+            <span class="tituloBeneficio">10% adicional al 18,03% de Grupo Carrasco </span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_final_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_4244" data-final_item_id="final_3344">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_247291_GLIC216X216.jpg" alt="Foto">
+            <span class="tituloBeneficio">25% en envíos de Glic</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_href" href="https://rasa.com.uy/promos/itau/" title="Ampliar" target="_blank" data-item_id="benef_2883" data-final_item_id="undefined">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_359727_Bridgestone216x216.jpg" alt="Foto">
+            <span class="tituloBeneficio">25% menos en Bridgestone</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_href" href="https://www.nuevosiglo.com.uy/Promos/1953" title="Ampliar" target="_blank" data-item_id="benef_765" data-final_item_id="undefined">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_261107_NUEVOSIGLO216x216.jpg" alt="Foto">
+            <span class="tituloBeneficio">25% adicional en plan Nuevo Siglo</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_final_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_4282" data-final_item_id="final_3362">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_212443_LEBLANC216X216.jpg" alt="Foto">
+            <span class="tituloBeneficio">25% menos en Le Blanc</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_final_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_2842" data-final_item_id="final_2442">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_83777_bannerswebFundaciónItaú216x216.jpg" alt="Foto">
+            <span class="tituloBeneficio">25% menos en cursos de Fundación Itaú</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_final_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_4742" data-final_item_id="final_3742">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_3878138_IEEM216x216.jpg" alt="Foto">
+            <span class="tituloBeneficio">25% menos IEEM - Programa Jóvenes Profesionales</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_href" href="https://www.itau.com.uy/inst/telepeaje.html" title="Ampliar" target="_blank" data-item_id="benef_1162" data-final_item_id="undefined">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_457232_banner_telepeaje_216x216.png" alt="Foto">
+            <span class="tituloBeneficio">Solicitá gratis tu Tag de Telepeaje</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_href" href="https://productos.misbeneficios.com.uy" title="Ampliar" target="_blank" data-item_id="benef_67" data-final_item_id="undefined">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_201421_MisBeneficios216x216.jpg" alt="Foto">
+            <span class="tituloBeneficio">Precios exclusivos en misbeneficios.com.uy</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_href" href="https://www.itau.com.uy/inst/restaurantes.html" title="Ampliar" target="_blank" data-item_id="benef_4022" data-final_item_id="undefined">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_3794867_bannerssolotextorestaurantes216x216.jpg" alt="Foto">
+            <span class="tituloBeneficio">15% menos en restaurantes de Montevideo </span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_final_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_4622" data-final_item_id="final_3602">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_1260414_DIVINO216x216.jpg" alt="Foto">
+            <span class="tituloBeneficio">15% menos en Divino </span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_final_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_4483" data-final_item_id="final_3502">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_554883_SOHO216X216.jpg" alt="Foto">
+            <span class="tituloBeneficio">15% menos en Soho Deco Punta del Este</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_final_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_610" data-final_item_id="final_449">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_255545_Bosch216x216.jpg" alt="Foto">
+            <span class="tituloBeneficio">15% menos en Bosch&amp;Cia</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_final_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_1903" data-final_item_id="final_1583">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_1495726_Cir_216x216.jpg" alt="Foto">
+            <span class="tituloBeneficio">15% menos en estufas y calefactores a leña BOSCA </span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_final_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_3882" data-final_item_id="final_1467">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_1549919_img_1204371_MERCADOFERRANDO216X216.jpg" alt="Foto">
+            <span class="tituloBeneficio">25% menos en Mercado Ferrando</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_grupo_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_4303" data-final_item_id="final_3382">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_126276_CANDYSWEET216x216.jpg" alt="Foto">
+            <span class="tituloBeneficio">15% menos en Candy Sweet</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+                <br class="clear">
+              </div>
+            </li>
+            <li style="width: 33.3333%;">
+              <input type="radio" name="tabs" id="tab2" class="tabs_input"> <label for="tab2" data-hash="tarjetas-debito">Tarjetas
+              de débito</label>
+              <div id="tab-content2" class="tab-content" style="">
+          <a class="boxBeneficio btn_href" href="https://www.itauvolar.com.uy/volar/#/?utm_source=Placa_Home_Volar&amp;utm_medium=Placa_home&amp;utm_campaign" title="Ampliar" target="_blank" data-item_id="benef_3982" data-final_item_id="undefined">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_3640470_bannerssolotextocanjesvolar216x216.jpg" alt="Foto">
+            <span class="tituloBeneficio">Canje de millas del programa Volar</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_final_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_4762" data-final_item_id="final_3762">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_4133891_Plataformasstreaming216x216.jpg" alt="Foto">
+            <span class="tituloBeneficio">50% menos en Netflix y Spotify</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_final_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_4823" data-final_item_id="final_3344">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_289754_GLIC216X216.jpg" alt="Foto">
+            <span class="tituloBeneficio">25% en envíos de Glic</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_href" href="https://www.itau.com.uy/inst/restaurantes.html" title="Ampliar" target="_blank" data-item_id="benef_4682" data-final_item_id="undefined">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_1747829_bannerssolotextorestaurantes216x216.jpg" alt="Foto">
+            <span class="tituloBeneficio">15% menos en restaurantes de Montevideo</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_final_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_4302" data-final_item_id="final_3382">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_120445_CANDYSWEET216x216.jpg" alt="Foto">
+            <span class="tituloBeneficio">15% menos en Candy Sweet</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_final_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_4522" data-final_item_id="final_3562">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_979453_PEDIDOMARKET216X216.jpg" alt="Foto">
+            <span class="tituloBeneficio">10% menos en PedidosYa Market</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_final_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_78" data-final_item_id="final_153">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_295614_SanRoque216x216.jpg" alt="Foto">
+            <span class="tituloBeneficio">10% menos en San Roque</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_final_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_195" data-final_item_id="final_164">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_466444_ElTúnel_216x21625.jpg" alt="Foto">
+            <span class="tituloBeneficio">10% menos en El Túnel</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_final_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_196" data-final_item_id="final_156">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_1581964_MOSCA216x216.jpg" alt="Foto">
+            <span class="tituloBeneficio">10% menos en Mosca</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_grupo_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_4122" data-final_item_id="final_2682">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_481280_216X216SALTO.jpg" alt="Foto">
+            <span class="tituloBeneficio">10% menos en comercios adheridos de Salto</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_grupo_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_4123" data-final_item_id="final_3587">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_486795_216X216PAYSANDU.jpg" alt="Foto">
+            <span class="tituloBeneficio">10% menos en comercios adheridos de Paysandú</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_grupo_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_4124" data-final_item_id="final_3585">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_500144_216X216TACUAREMBO.jpg" alt="Foto">
+            <span class="tituloBeneficio">10% menos en comercios adheridos de Tacuarembó</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_grupo_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_4125" data-final_item_id="final_2303">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_527998_216X216MERCEDES.jpg" alt="Foto">
+            <span class="tituloBeneficio">10% menos en comercios adheridos de Mercedes</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_final_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_192" data-final_item_id="final_143">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_292434_Freddo216x21616.jpg" alt="Foto">
+            <span class="tituloBeneficio">2x1 en Freddo</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_final_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_189" data-final_item_id="final_154">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_297962_LasDelicias216x21618.jpg" alt="Foto">
+            <span class="tituloBeneficio">2x1 en Las Delicias</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+          <a class="boxBeneficio btn_show_final_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_193" data-final_item_id="final_165">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_293946_Auxicar216x21615.jpg" alt="Foto">
+            <span class="tituloBeneficio">Auxicar</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+                <br class="clear">
+              </div>
+            </li>
+    
+            <li class="noMarginRight" style="width: 33.3333%;">
+              <input type="radio" name="tabs" id="tab4" class="tabs_input">
+              <label for="tab4" data-hash="alimentacion">Alimentación</label>
+              <div id="tab-content4" class="tab-content" style="">
+          <a class="boxBeneficio btn_show_final_item" href="javascript:;" title="Ampliar" target="_self" data-item_id="benef_4523" data-final_item_id="final_3562">
+            <img src="https://www.itau.com.uy/inst/aci/images/img_1003804_PEDIDOMARKET216X216.jpg" alt="Foto">
+            <span class="tituloBeneficio">10% menos en PedidosYa Market</span> <span class="btnGrisComun">Ver más</span>
+            <br class="clear"> </a>
+        
+                <br class="clear">
+              </div>
+            </li>
+            
+          </ul>
+          <br class="clear">
+          <div class="empujaTabs" style="height: 2528px;"></div>
+        </div>
+        <!-- MODEL -->
+        
+        <!-- MODEL -->
+      </div>
+      <!-- GRUPO ITEMS -->
+      <div class="none" id="grupo_items" style="">
+        <div class="wrapper marginT50">
+          <div class="contTitulo">
+            <p class="breadCrumbBeneficios">
+              <a class="btn_volver_grupo_item" href="javascript:;" title="Volver">Beneficios</a> »
+              <span class="bread_titulo_beneficio_ampliado"></span>
+            </p>
+            <p>&nbsp;</p>
+            <h2 class="tituloBeneficioAmpliado" id="titulo_beneficio_ampliado"></h2>
+            <p class="subtituloBeneficioAmpliado" id="descripcion_beneficio_ampliado"></p>
+            <br class="clear">
+          </div>
+          <div class="boxBeneficiosAmpliados">
+            <div class="filaCol"></div>
+            <br class="clear">
+          </div>
+          <br class="clear">
+          <br class="clear">
+          <a title="Volver" href="javascript:;" class="btn_volver_grupo_item">« Volver</a>
+        </div>
+        <div id="model_grupo_item" class="none">
+          <div class="boxBeneficioAmpliado">
+            <div class="contImgBeneficioAmpliado">
+              <img data-src="https://www.itau.com.uy/inst/aci/images/__img_logo__" alt="Logo">
+            </div>
+            <h6>__subtitulo__</h6>
+            <p>__detalle__</p>
+            <p>
+              <a href="javascript:;" title="Ver más" target="_self" class="btn_show_final_item" data-final_item_id="__final_item_id__" data-item_id="__item_id__">Ver
+                más</a></p>
+          </div>
+        </div>
+      </div>
+      <!-- FINAL ITEMS -->
+      <div class="none" id="final_item" style="">
+        <div class="wrapper marginT50">
+          <div class="contTitulo">
+            <p class="breadCrumbBeneficios">
+              <a class="btn_volver_grupo_item" href="javascript:;" title="Volver">Beneficios</a> »
+              <span class="bread_titulo_beneficio_ampliado"></span>
+            </p>
+            <h2 class="tituloBeneficioAmpliado" id="grupo_item_subtitulo"></h2><br class="clear">
+          </div>
+          <!-- FINAL ITEM -->
+          <div class="contImagenSeccion">
+            <img id="final_item_img_grande" alt="Foto" src="about:blank">
+            <p id="final_item_descripcion"></p>
+          </div>
+          <div class="boxBeneficioDestacado">
+            <!-- GRUPO ITEM O ITEM -->
+            <div class="contImgBeneficioDestacado">
+              <img id="grupo_item_img_logo" alt="Logo" src="about:blank">
+            </div>
+            <h6 id="grupo_item_subtitulo2"></h6>
+            <p id="grupo_item_detalle"></p>                <br class="clear">
+            <!-- FINAL ITEM -->
+            <div class="basesBeneficioDestacado">
+              <p id="final_item_bases"></p>
+            </div>
+            <br class="clear">
+            <div id="final_item_mapa_cont">
+              <h3>Encontrá este beneficio en el siguiente punto</h3>
+              <div id="google_maps_canvas2" style="width:100%;height:450px;"></div>
+            </div>
+          </div>
+          <br class="clear">
+        </div>
+      </div>
+    </section>
+    <script>$(document).ready(function() {
+      seccion_beneficios();
+    });</script><!-- Fin CONTENIDO  --><!-- FOOTER  -->
+    <a id="btnOpenChat" href="javascript:;" style="display: block;"></a>
+    <footer>
+      <nav id="navFooter">
+        <div class="wrapper">
+          <ul>
+            <li><a href="/inst/sobreItau.html" title="Ir a la sección" target="_self">Sobre Itaú</a></li>
+            <li><a href="/inst/aci/docs/tarifario.pdf" title="Ver" target="_blank">Tarifario</a></li>
+            <li><a href="/inst/contratosCartillas.html" title="Ir a la sección" target="_self">Contratos y cartillas</a></li>
+            <li><a href="http://www.fundacionitau.com.uy/" title="Ir" target="_blank">Fundación Itaú</a></li>
+            <li><a href="/inst/trabajaConNosotros.html" title="Ir a la sección" target="_self">Trabajá con nosotros</a></li>
+            <li><a href="/inst/masSeguridad.html" title="Ir a la sección" target="_self">Más seguridad</a></li>
+            <li><a href="/inst/beneficios.html" title="Ir a la sección" target="_self">Beneficios</a></li>
+            <li><a href="javascript:;" title="Ir a la sección" target="_self" id="linkCotizaciones">Cotizaciones</a>
+              <div class="overlayCotizaciones">
+                <div id="contCotizaciones">
+                  <div class="topCotizaciones">
+                    <a href="javascript:;" target="_self" title="Cerrar" id="cerrarCoti">Cerrar</a>
+                    <h3>Cotización de la moneda</h3>
+                    <table>
+                      <tbody><tr>
+                        <th class="tabla34 textoIzquierda">Moneda</th>
+                        <th class="tabla33 textoDerecha">Compra</th>
+                        <th class="tabla33 textoDerecha">Venta</th>
+                      </tr>
+                    </tbody></table>
+                  </div>
+                  <div class="bottomCotizaciones">
+                    <table>
+                      <tbody><tr>
+                        <td class="tabla17 textoIz"><img src="/inst/imagenes/icoCotiDolar.png" alt="Dolar" width="22"></td>
+                        <td class="tabla16 textoIz">U$S</td>
+                        <td class="tabla33" id="USD-compra">42,80</td>
+                        <td class="tabla34" id="USD-venta">45,25</td>
+                      </tr>
+                      <tr>
+                        <td class="textoIz"><img src="/inst/imagenes/icoCotiReal.png" alt="Real" width="22"></td>
+                        <td class="textoIz">R</td>
+                        <td id="CRUZ-compra">7,50</td>
+                        <td id="CRUZ-venta">9,50</td>
+                      </tr>
+                      <tr>
+                        <td class="textoIz"><img src="/inst/imagenes/icoCotiArg.png" alt="Peso argentino" width="22"></td>
+                        <td class="textoIz">$</td>
+                        <td id="ARGP-compra">0,05</td>
+                        <td id="ARGP-venta">0,55</td>
+                      </tr>
+                      <tr>
+                        <td class="textoIz"><img src="/inst/imagenes/icoCotiEuro.png" alt="Euro" width="22"></td>
+                        <td class="textoIz">€</td>
+                        <td id="EUR-compra">49,40</td>
+                        <td id="EUR-venta">54,95</td>
+                      </tr>
+                    </tbody></table>
+                    <table>
+                      <tbody><tr>
+                        <td class="textoIz" colspan="3">Valor de la Unidad Indexada</td>
+                        <td id="URGI-compra">4,97</td>
+                      </tr>
+                    </tbody></table>
+                    <p class="textoCentrado textoChico">Estas cotizaciones son en pesos uruguayos y sólo a título
+                      informativo</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="javascript:;" title="Ir a la sección" target="_self" id="linkPagos">Pagos</a>
+              <div class="overlayPagosFooter">
+                <div id="conPagosFooter">
+                  <a href="javascript:;" target="_self" title="Cerrar" id="cerrarPagos">Cerrar</a>
+    
+                  <a href="https://spf.sistarbanc.com.uy/spfdebitos/seleccionFactura.jsp?entidad=SUCIVE&amp;servicio=PAT&amp;banco=113" target="_blank" title="Ir al sitio">Sucive</a>
+                  <a href="https://spf.sistarbanc.com.uy/spfe/Recargas.jsp?banco=113" target="_blank" title="Ir al sitio">Recargas</a>
+                  <!-- <a href="https://spf.sistarbanc.com.uy/spfdebitos/seleccionServicio.jsp?banco=113" target="_blank" title="Ir al sitio">Otros</a> -->
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="/inst/sustentabilidad.html" title="Ir a la sección" target="_self">Sustentabilidad</a>
+            </li>
+            <li><a href="/inst/emergencias.html" title="Ir a la sección" target="_self" class="linkEmergencias">Emergencias</a>
+            </li>
+            <li id="linkPaisesFooter">
+              <a href="javascript:;" title="Ir a la sección" target="_self"><img src="/inst/imagenes/flagFooterUruguai.png" alt="Uruguay" width="25"></a>
+              <div class="overlayPaisesFooter">
+                <div id="conPaisesFooter">
+                  <a href="javascript:;" target="_self" title="Cerrar" id="cerrarPaises">Cerrar</a>
+                  <a href="http://www.itau.com.ar" target="_blank" title="Ir al sitio"><img src="/inst/imagenes/flagFooterArgentina.png" alt="Argentina" width="25"><span>Argentina</span></a>
+                  <a href="https://www.itau.com.br/" target="_blank" title="Ir al sitio"><img src="/inst/imagenes/flagFooterBrasil.png" alt="Brasil" width="25"><span>Brasil</span></a>
+                  <a href="https://banco.itau.cl" target="_blank" title="Ir al sitio"><img src="/inst/imagenes/flagFooterChile.png" alt="Chile" width="25"><span>Chile</span></a>
+                  <a href="https://www.itau.com.py/" target="_blank" title="Ir al sitio"><img src="/inst/imagenes/flagFooterParaguai.png" alt="Paraguay" width="25"><span>Paraguay</span></a>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <br class="clear">
+          <a href="javascript:;" title="Ver mapa del sitio" target="_self" id="btnAccesoRapido"><span>Acceso rápido</span></a>
+        </div>
+      </nav>
+    </footer>
+    <div class="overlayMensajes" id="modal">
+      <div class="contMensajeRespuesta">
+        <h3></h3>
+        <div id="modal_content"></div>
+        <br class="clear">
+        <a href="javascript:;" target="_self" title="Cerrar" id="btn_modal_cerrar">Cerrar</a>
+      </div>
+    </div>
+    <div id="accesoRapido">
+      <div class="wrapper">
+        <h2>Itaú en un clic</h2>
+        <fieldset class="buscador">
+          <legend>Buscador</legend>
+          <input type="text" id="txt_palabra" placeholder="¿Qué estás buscando?">
+          <input type="submit" id="btn_buscar_palabra" value="buscar">
+        </fieldset>
+        <br class="clear">
+        <div class="contLetras">
+      <div class="boxLetra" id="box_letra_ ">
+        <h3> </h3>
+        <ul id="ul_ ">
+      <li id="item0"><a href="prestacionesBPS.html" target="_self" title="Ir a la seccion"> Adhesión a prestaciones BPS </a></li>
+    
+      <li id="item1"><a href="abriTuCuentaQR.html" target="_self" title="Ir a la seccion"> Es necesario que accedas desde tu dispositivo  móvil para abrir tu cuenta online. </a></li>
+    
+      <li id="item2"><a href="euroMoney.html" target="_self" title="Ir a la seccion"> Itaú es elegido como el Banco del Año en Uruguay </a></li>
+    
+      <li id="item3"><a href="reorganizacionDeDeudas.html" target="_self" title="Ir a la seccion"> Reorganizá tus deudas en un solo préstamo. </a></li>
+    </ul>
+      </div>
+    
+      <div class="boxLetra" id="box_letra_A">
+        <h3>A</h3>
+        <ul id="ul_A">
+      <li id="item4"><a href="abritucuenta_unipersonal.html" target="_self" title="Ir a la seccion">Abri tu cuenta unipersonal</a></li>
+    
+      <li id="item5"><a href="abriTuCuentaU25QR.html" target="_self" title="Ir a la seccion">abriTuCuentaU25QR.html</a></li>
+    
+      <li id="item6"><a href="abriTuCuenta.html" target="_self" title="Ir a la seccion">Abrí tu cuenta</a></li>
+    
+      <li id="item7"><a href="administraTuDinero.html" target="_self" title="Ir a la seccion">Administrá tu dinero</a></li>
+    
+      <li id="item8"><a href="empresasAgronegocios.html" target="_self" title="Ir a la seccion">Agronegocios</a></li>
+    
+      <li id="item9"><a href="ahorroProgramado.html" target="_self" title="Ir a la seccion">Ahorro programado</a></li>
+    
+      <li id="item10"><a href="tarjetaAlimentacion.html" target="_self" title="Ir a la seccion">Ahorrá y simplificá el pago de sueldos con Itaú Alimentación</a></li>
+    
+      <li id="item11"><a href="appItau.html" target="_self" title="Ir a la seccion">App Itaú</a></li>
+    
+      <li id="item12"><a href="canalesdigitales_itautarjetas.html" target="_self" title="Ir a la seccion">App Itaú Tarjetas</a></li>
+    
+      <li id="item13"><a href="asistenciaPyme.html" target="_self" title="Ir a la seccion">Asistencia Pyme</a></li>
+    
+      <li id="item14"><a href="atencionParaEmpresas.html" target="_self" title="Ir a la seccion">Atención para empresas</a></li>
+    
+      <li id="item15"><a href="atencionParaTi.html" target="_self" title="Ir a la seccion">Atención para ti</a></li>
+    
+      <li id="item16"><a href="objetivosAuto.html" target="_self" title="Ir a la seccion">Auto</a></li>
+    </ul>
+      </div>
+    
+      <div class="boxLetra" id="box_letra_B">
+        <h3>B</h3>
+        <ul id="ul_B">
+      <li id="item17"><a href="beneficios.html" target="_self" title="Ir a la seccion">Beneficios</a></li>
+    
+      <li id="item18"><a href="urunday.html" target="_self" title="Ir a la seccion">Beneficios en clubes</a></li>
+    
+      <li id="item19"><a href="paratiCajaDeAhorroBeneficios.html" target="_self" title="Ir a la seccion">Beneficios y servicios de tu caja de ahorros Itaú</a></li>
+    
+      <li id="item20"><a href="paratiCuentaCorrienteBeneficios.html" target="_self" title="Ir a la seccion">Beneficios y servicios de tu cuenta</a></li>
+    
+      <li id="item21"><a href="beneficiosexclusivos.html" target="_self" title="Ir a la seccion">beneficiosexclusivos.html</a></li>
+    
+      <li id="item22"><a href="bienvenidoaItau.html" target="_self" title="Ir a la seccion">Bienvenido a Itaú</a></li>
+    </ul>
+      </div>
+    
+      <div class="boxLetra" id="box_letra_C">
+        <h3>C</h3>
+        <ul id="ul_C">
+      <li id="item23"><a href="paratiCajaDeAhorro.html" target="_self" title="Ir a la seccion">Caja de ahorro</a></li>
+    
+      <li id="item24"><a href="objetivosCasa.html" target="_self" title="Ir a la seccion">Casa</a></li>
+    
+      <li id="item25"><a href="ceroSiempre.html" target="_self" title="Ir a la seccion">Cero siempre</a></li>
+    
+      <li id="item26"><a href="unTecho.html" target="_self" title="Ir a la seccion">Colaborá con un techo</a></li>
+    
+      <li id="item27"><a href="empresasComercioExterior.html" target="_self" title="Ir a la seccion">Comercio Exterior</a></li>
+    
+      <li id="item28"><a href="pagoCuentas.html" target="_self" title="Ir a la seccion">Con Itaú pagocuentas, ganá tiempo y comodidad</a></li>
+    
+      <li id="item29"><a href="buzones.html" target="_self" title="Ir a la seccion">Con Itaú, tenés más tiempo para todo</a></li>
+    
+      <li id="item30"><a href="comprobantesFiscalesElectronicos.html" target="_self" title="Ir a la seccion">Consulta de comprobantes fiscales</a></li>
+    
+      <li id="item31"><a href="consumirAhorrar.html" target="_self" title="Ir a la seccion">Consumir y ahorrar</a></li>
+    
+      <li id="item32"><a href="contratosCartillas.html" target="_self" title="Ir a la seccion">Contratos y cartillas</a></li>
+    
+      <li id="item33"><a href="controlDeGastos.html" target="_self" title="Ir a la seccion">controlDeGastos.html</a></li>
+    
+      <li id="item34"><a href="coronavirus.html" target="_self" title="Ir a la seccion">coronavirus</a></li>
+    
+      <li id="item35"><a href="paratiCuentaCorriente.html" target="_self" title="Ir a la seccion">Cuenta corriente</a></li>
+    
+      <li id="item36"><a href="empresasCuentaRecaudadora.html" target="_self" title="Ir a la seccion">Cuenta recaudadora</a></li>
+    
+      <li id="item37"><a href="empresasCuentaSueldos2.html" target="_self" title="Ir a la seccion">Cuenta sueldos</a></li>
+    
+      <li id="item38"><a href="cuentaU25.html" target="_self" title="Ir a la seccion">Cuenta U25</a></li>
+    
+      <li id="item39"><a href="cuentaParaPagos.html" target="_self" title="Ir a la seccion">cuentaParaPagos.html</a></li>
+    
+      <li id="item40"><a href="tarjetaPersonalServicio.html" target="_self" title="Ir a la seccion">Cuentas para personal de servicio</a></li>
+    
+      <li id="item41"><a href="cuentas.html" target="_self" title="Ir a la seccion">cuentas.html</a></li>
+    </ul>
+      </div>
+    
+      <div class="boxLetra" id="box_letra_D">
+        <h3>D</h3>
+        <ul id="ul_D">
+      <li id="item42"><a href="debitosAutomaticos.html" target="_self" title="Ir a la seccion">debitosAutomaticos.html</a></li>
+    
+      <li id="item43"><a href="app_cheques.html" target="_self" title="Ir a la seccion">Depósito de cheques desde la app</a></li>
+    
+      <li id="item44"><a href="empresasAgronegociosCheques.html" target="_self" title="Ir a la seccion">Descuento de cheques de frigoríficos</a></li>
+    </ul>
+      </div>
+    
+      <div class="boxLetra" id="box_letra_E">
+        <h3>E</h3>
+        <ul id="ul_E">
+      <li id="item45"><a href="nuevoPrestamoDigital.html" target="_self" title="Ir a la seccion">El primer préstamo 100% digital es para ti</a></li>
+    
+      <li id="item46"><a href="emergencias.html" target="_self" title="Ir a la seccion">Emergencias</a></li>
+    
+      <li id="item47"><a href="emprendedores.html" target="_self" title="Ir a la seccion">Emprendedoras - Apoyo a emprendedores</a></li>
+    
+      <li id="item48"><a href="objetivosEmpresas.html" target="_self" title="Ir a la seccion">Empresas</a></li>
+    
+      <li id="item49"><a href="empresasCuentaCorriente.html" target="_self" title="Ir a la seccion">Empresas Cuenta Corriente</a></li>
+    
+      <li id="item50"><a href="expoactiva.html" target="_self" title="Ir a la seccion">Expoactiva vuelve a encontrarnos</a></li>
+    </ul>
+      </div>
+    
+      <div class="boxLetra" id="box_letra_F">
+        <h3>F</h3>
+        <ul id="ul_F">
+      <li id="item51"><a href="empresasPrestamosFinanciacion.html" target="_self" title="Ir a la seccion">Financiación a corto y largo plazo</a></li>
+    
+      <li id="item52"><a href="empresasAgronegociosCultivos.html" target="_self" title="Ir a la seccion">Financiación de cultivos de secano</a></li>
+    
+      <li id="item53"><a href="financiacionSustentable.html" target="_self" title="Ir a la seccion">Financiación de impacto positivo</a></li>
+    
+      <li id="item54"><a href="empresasAgronegociosMaquinaria.html" target="_self" title="Ir a la seccion">Financiación de maquinaria</a></li>
+    
+      <li id="item55"><a href="empresasAgronegociosArroz.html" target="_self" title="Ir a la seccion">Financiación del cultivo de arroz</a></li>
+    
+      <li id="item56"><a href="fitnanzas.html" target="_self" title="Ir a la seccion">Fitnanzas</a></li>
+    
+      <li id="item57"><a href="fitnanzasTest.html" target="_self" title="Ir a la seccion">Fitnanzas Test</a></li>
+    
+      <li id="item58"><a href="solicitudConsultas.html" target="_self" title="Ir a la seccion">Formulario de consultas</a></li>
+    
+      <li id="item59"><a href="consultasBot.html" target="_self" title="Ir a la seccion">Formulario de contacto</a></li>
+    
+      <li id="item60"><a href="solicitudReclamos.html" target="_self" title="Ir a la seccion">Formulario de reclamos</a></li>
+    </ul>
+      </div>
+    
+      <div class="boxLetra" id="box_letra_G">
+        <h3>G</h3>
+        <ul id="ul_G">
+      <li id="item61"><a href="gbdResultados.html" target="_self" title="Ir a la seccion">gbdResultados.html</a></li>
+    
+      <li id="item62"><a href="contratosCartillas.html" target="_self" title="Ir a la seccion">Giros - Contratos y cartillas</a></li>
+    
+      <li id="item63"><a href="girosIEDE.html" target="_self" title="Ir a la seccion">girosIEDE.html</a></li>
+    </ul>
+      </div>
+    
+      <div class="boxLetra" id="box_letra_H">
+        <h3>H</h3>
+        <ul id="ul_H">
+      <li id="item64"><a href="horariospde.html" target="_self" title="Ir a la seccion">Horarios de verano en Punta del Este y Roosevelt</a></li>
+    </ul>
+      </div>
+    
+      <div class="boxLetra" id="box_letra_I">
+        <h3>I</h3>
+        <ul id="ul_I">
+      <li id="item65"><a href="sobreItauInformacionRegulatoria.html" target="_self" title="Ir a la seccion">Información regulatoria</a></li>
+    
+      <li id="item66"><a href="paratiInversiones.html" target="_self" title="Ir a la seccion">Inversiones</a></li>
+    
+      <li id="item67"><a href="inversiones.html" target="_self" title="Ir a la seccion">inversiones.html</a></li>
+    
+      <li id="item68"><a href="tarjetaItauBankingCard2.html" target="_self" title="Ir a la seccion">Itaú Banking Card</a></li>
+    
+      <li id="item69"><a href="tarjetaItauBankingCardJr.html" target="_self" title="Ir a la seccion">Itaú Banking Card Junior</a></li>
+    
+      <li id="item70"><a href="itauEmpresas.html" target="_self" title="Ir a la seccion">Itaú Empresa</a></li>
+    
+      <li id="item71"><a href="expoPrado.html" target="_self" title="Ir a la seccion">Itaú en Expo Prado 2018</a></li>
+    
+      <li id="item72"><a href="itaupagocuentas.html" target="_self" title="Ir a la seccion">Itaú Pagocuentas</a></li>
+    
+      <li id="item73"><a href="itauPymes.html" target="_self" title="Ir a la seccion">Itaú para Pymes</a></li>
+    
+      <li id="item74"><a href="moves.html" target="_self" title="Ir a la seccion">Itaú se suma a Movés</a></li>
+    
+      <li id="item75"><a href="itoken.html" target="_self" title="Ir a la seccion">iToken</a></li>
+    </ul>
+      </div>
+    
+      <div class="boxLetra" id="box_letra_L">
+        <h3>L</h3>
+        <ul id="ul_L">
+      <li id="item76"><a href="leeParaUnNino.html" target="_self" title="Ir a la seccion">Leé para un niño</a></li>
+    
+      <li id="item77"><a href="tecladoItau.html" target="_self" title="Ir a la seccion">Llegó Teclado Itaú. Hacé transferencias sin salir del chat.</a></li>
+    </ul>
+      </div>
+    
+      <div class="boxLetra" id="box_letra_M">
+        <h3>M</h3>
+        <ul id="ul_M">
+      <li id="item78"><a href="millasItauVolar.html" target="_self" title="Ir a la seccion">millasItauVolar.html</a></li>
+    
+      <li id="item79"><a href="nuevasTarifas.html" target="_self" title="Ir a la seccion">Modificación de tarifas</a></li>
+    
+      <li id="item80"><a href="http://www.programaitau.com" target="_blank" title="Ir a la seccion">MoWeek</a></li>
+    
+      <li id="item81"><a href="mujeresEmprendedoras.html" target="_self" title="Ir a la seccion">Mujeres emprendedoras</a></li>
+    
+      <li id="item82"><a href="comunicacionBCU.html" target="_self" title="Ir a la seccion">Más opciones de pago</a></li>
+    
+      <li id="item83"><a href="masSeguridadTips.html" target="_self" title="Ir a la seccion">más seguridad</a></li>
+    
+      <li id="item84"><a href="depositosyretiros.html" target="_self" title="Ir a la seccion">Más tiempo y comodidad para tus retiros y depósitos</a></li>
+    </ul>
+      </div>
+    
+      <div class="boxLetra" id="box_letra_N">
+        <h3>N</h3>
+        <ul id="ul_N">
+      <li id="item85"><a href="sobreItauNuestrasCausas.html" target="_self" title="Ir a la seccion">Nuestras causas</a></li>
+    
+      <li id="item86"><a href="sucursalBuceo.html" target="_self" title="Ir a la seccion">Nueva agencia Buceo hecha para ti</a></li>
+    </ul>
+      </div>
+    
+      <div class="boxLetra" id="box_letra_P">
+        <h3>P</h3>
+        <ul id="ul_P">
+      <li id="item87"><a href="tarjetaPagoDeSueldos.html" target="_self" title="Ir a la seccion">Pago de sueldos</a></li>
+    
+      <li id="item88"><a href="paraEmpresas.html" target="_self" title="Ir a la seccion">Para Empresas</a></li>
+    
+      <li id="item89"><a href="paraTi.html" target="_self" title="Ir a la seccion">Para ti</a></li>
+    
+      <li id="item90"><a href="personalBank_personal.html" target="_self" title="Ir a la seccion">Personal Bank</a></li>
+    
+      <li id="item91"><a href="personalBank_serCliente.html" target="_self" title="Ir a la seccion">personalBank_serCliente.html</a></li>
+    
+      <li id="item92"><a href="phishing.html" target="_self" title="Ir a la seccion">Phishing</a></li>
+    
+      <li id="item93"><a href="preAprobados.html" target="_self" title="Ir a la seccion">preAprobados.html</a></li>
+    
+      <li id="item94"><a href="prestamosautomotores.html" target="_self" title="Ir a la seccion">prestamosautomotores.html</a></li>
+    
+      <li id="item95"><a href="empresasAgronegociosGanadero.html" target="_self" title="Ir a la seccion">Programa ganadero</a></li>
+    
+      <li id="item96"><a href="http://www.programaitau.com" target="_blank" title="Ir a la seccion">Programa Itaú</a></li>
+    
+      <li id="item97"><a href="programaVolar.html" target="_self" title="Ir a la seccion">Programa Volar</a></li>
+    
+      <li id="item98"><a href="prevencionFraude.html" target="_self" title="Ir a la seccion">Protegete del phishing</a></li>
+    
+      <li id="item99"><a href="objetivosProyectos.html" target="_self" title="Ir a la seccion">Proyectos</a></li>
+    
+      <li id="item100"><a href="prestamoAguinaldo.html" target="_self" title="Ir a la seccion">Préstamo aguinaldo</a></li>
+    
+      <li id="item101"><a href="PrestamosSiGaPymes.html" target="_self" title="Ir a la seccion">Préstamo con garantía SiGa Emergencia</a></li>
+    
+      <li id="item102"><a href="prestamos.html" target="_self" title="Ir a la seccion">Préstamos</a></li>
+    
+      <li id="item103"><a href="prestamosMiautoCalculador.html" target="_self" title="Ir a la seccion">Préstamos Automotores</a></li>
+    
+      <li id="item104"><a href="prestamoConstruccion.html" target="_self" title="Ir a la seccion">Préstamos Construcción</a></li>
+    
+      <li id="item105"><a href="prestamos-hipotecarios.html" target="_self" title="Ir a la seccion">Préstamos hipotecarios</a></li>
+    
+      <li id="item106"><a href="emprendedores.html" target="_self" title="Ir a la seccion">Pymes apoyo a emprendedores</a></li>
+    
+      <li id="item107"><a href="empresasPagosElectronicos.html" target="_self" title="Ir a la seccion">Pymes pagos electrónicos</a></li>
+    
+      <li id="item108"><a href="empresasPrestamos.html" target="_self" title="Ir a la seccion">Pymes préstamos</a></li>
+    
+      <li id="item109"><a href="pymesServicios.html" target="_self" title="Ir a la seccion">Pymes servicios</a></li>
+    
+      <li id="item110"><a href="tarjetaPyme.html" target="_self" title="Ir a la seccion">Pymes tarjetas</a></li>
+    </ul>
+      </div>
+    
+      <div class="boxLetra" id="box_letra_Q">
+        <h3>Q</h3>
+        <ul id="ul_Q">
+      <li id="item111"><a href="sobreItauQuienesSomos.html" target="_self" title="Ir a la seccion">Quienes somos</a></li>
+    </ul>
+      </div>
+    
+      <div class="boxLetra" id="box_letra_R">
+        <h3>R</h3>
+        <ul id="ul_R">
+      <li id="item112"><a href="estadoCuentaDigital.html" target="_self" title="Ir a la seccion">Recibí tu estado de cuenta digital</a></li>
+    
+      <li id="item113"><a href="empresasAgronegociosRemates.html" target="_self" title="Ir a la seccion">Remates de Pantalla Uruguay</a></li>
+    
+      <li id="item114"><a href="reportesustentabilidad2018.html" target="_self" title="Ir a la seccion">Reporte Sustentabilidad 2018</a></li>
+    
+      <li id="item115"><a href="reportesustentabilidad2019.html" target="_self" title="Ir a la seccion">Reporte Sustentabilidad 2019</a></li>
+    
+      <li id="item116"><a href="restaurantes.html" target="_self" title="Ir a la seccion">Restaurantes</a></li>
+    </ul>
+      </div>
+    
+      <div class="boxLetra" id="box_letra_S">
+        <h3>S</h3>
+        <ul id="ul_S">
+      <li id="item117"><a href="segurosAccidentes.html" target="_self" title="Ir a la seccion">Seguro de accidentes personales</a></li>
+    
+      <li id="item118"><a href="segurosViajero.html" target="_self" title="Ir a la seccion">Seguro de asistencia al viajero</a></li>
+    
+      <li id="item119"><a href="segurosVida.html" target="_self" title="Ir a la seccion">Seguro de vida</a></li>
+    
+      <li id="item120"><a href="segurosHogar.html" target="_self" title="Ir a la seccion">Seguro para tu hogar</a></li>
+    
+      <li id="item121"><a href="seguroFinanzas.html" target="_self" title="Ir a la seccion">Seguro para tus finanzas</a></li>
+    
+      <li id="item122"><a href="proteccionTotal.html" target="_self" title="Ir a la seccion">Seguro Protección total</a></li>
+    
+      <li id="item123"><a href="seguros.html" target="_self" title="Ir a la seccion">Seguros</a></li>
+    
+      <li id="item124"><a href="segurosSalud.html" target="_self" title="Ir a la seccion">Seguros para tu salud</a></li>
+    
+      <li id="item125"><a href="aperturaCuentaU25-iOS.html" target="_self" title="Ir a la seccion">Seguí estos pasos para abrir tu cuenta en Itaú</a></li>
+    
+      <li id="item126"><a href="servicios24.html" target="_self" title="Ir a la seccion">Servicios 24 horas</a></li>
+    
+      <li id="item127"><a href="simuladorVentas.html" target="_self" title="Ir a la seccion">Simulación de tarjeta Visa</a></li>
+    
+      <li id="item128"><a href="emprendedores.html" target="_self" title="Ir a la seccion">Sinergia - Apoyo a emprendedores</a></li>
+    
+      <li id="item129"><a href="sitioweb.html" target="_self" title="Ir a la seccion">Sitio Transaccional</a></li>
+    
+      <li id="item130"><a href="sobreItau.html" target="_self" title="Ir a la seccion">Sobre Itaú</a></li>
+    
+      <li id="item131"><a href="solicitudCuentaIFS.html" target="_self" title="Ir a la seccion">Solicitud de apertura de cuenta para el Pago de Tarjeta de Crédito y/o Préstamos</a></li>
+    
+      <li id="item132"><a href="solicitudCuentaPagoDeSueldos.html" target="_self" title="Ir a la seccion">Solicitud de apertura de tu cuenta de Pago de Sueldos</a></li>
+    
+      <li id="item133"><a href="solicitudCuentaComercio.html" target="_self" title="Ir a la seccion">Solicitud de cuenta comercio</a></li>
+    
+      <li id="item134"><a href="solicitudPagoDeSueldos.html" target="_self" title="Ir a la seccion">Solicitud de pago de sueldos</a></li>
+    
+      <li id="item135"><a href="solicitudPrestamoAutomotor.html" target="_self" title="Ir a la seccion">Solicitud de préstamo automotor</a></li>
+    
+      <li id="item136"><a href="solicitudPrestamoHipotecario.html" target="_self" title="Ir a la seccion">Solicitud de préstamo hipotecario</a></li>
+    
+      <li id="item137"><a href="solicitudSeguros.html" target="_self" title="Ir a la seccion">Solicitud de seguros</a></li>
+    
+      <li id="item138"><a href="solicitudTarjetasVentas.html" target="_self" title="Ir a la seccion">Solicitud de tarjeta Visa</a></li>
+    
+      <li id="item139"><a href="solicitudTarjetasValidacionDatos.html" target="_self" title="Ir a la seccion">Solicitud de tarjeta Visa Internacional</a></li>
+    
+      <li id="item140"><a href="solicitudTarjetasLatampass.html" target="_self" title="Ir a la seccion">Solicitud de tarjeta Visa LATAM Pass</a></li>
+    
+      <li id="item141"><a href="solicitudTarjetasCorporate.html" target="_self" title="Ir a la seccion">Solicitud de tarjetas Corporate</a></li>
+    
+      <li id="item142"><a href="solicitudDeCreditos.html" target="_self" title="Ir a la seccion">solicitudDeCreditos.html</a></li>
+    
+      <li id="item143"><a href="aci/docs/sucursales.pdf" target="_self" title="Ir a la seccion">Sucursales</a></li>
+    
+      <li id="item144"><a href="sustentabilidad.html" target="_self" title="Ir a la seccion">Sustentabilidad</a></li>
+    </ul>
+      </div>
+    
+      <div class="boxLetra" id="box_letra_T">
+        <h3>T</h3>
+        <ul id="ul_T">
+      <li id="item145"><a href="tarjetaAgro.html" target="_self" title="Ir a la seccion">Tarjeta Agro Itaú</a></li>
+    
+      <li id="item146"><a href="tarjetaVolarDebitoComercios.html" target="_self" title="Ir a la seccion">Tarjeta de débito Volar</a></li>
+    
+      <li id="item147"><a href="tarjetaLatam.html" target="_self" title="Ir a la seccion">Tarjeta LATAM Pass</a></li>
+    
+      <li id="item148"><a href="tarjetaOn.html" target="_self" title="Ir a la seccion">Tarjeta On</a></li>
+    
+      <li id="item149"><a href="tarjetaSueldosBasica.html" target="_self" title="Ir a la seccion">Tarjeta Sueldos Básica</a></li>
+    
+      <li id="item150"><a href="tarjetaVolar.html" target="_self" title="Ir a la seccion">Tarjeta Volar</a></li>
+    
+      <li id="item151"><a href="empresasTarjetas.html" target="_self" title="Ir a la seccion">Tarjetas</a></li>
+    
+      <li id="item152"><a href="tarjetas.html" target="_self" title="Ir a la seccion">Tarjetas Itaú</a></li>
+    
+      <li id="item153"><a href="tarjetasDebito.html" target="_self" title="Ir a la seccion">tarjetasDebito.html</a></li>
+    
+      <li id="item154"><a href="tarjetasDeCredito.html" target="_self" title="Ir a la seccion">tarjetasDeCredito.html</a></li>
+    
+      <li id="item155"><a href="tarjetasDeDebito.html" target="_self" title="Ir a la seccion">tarjetasDeDebito.html</a></li>
+    
+      <li id="item156"><a href="telepeaje.html" target="_self" title="Ir a la seccion">Telepeaje</a></li>
+    
+      <li id="item157"><a href="tipsParaTuViaje.html" target="_self" title="Ir a la seccion">Tips para tu viaje</a></li>
+    
+      <li id="item158"><a href="trabajaConNosotros.html" target="_self" title="Ir a la seccion">Trabaja con nosotros</a></li>
+    
+      <li id="item159"><a href="contratosCartillas.html" target="_self" title="Ir a la seccion">Transferencias - Contratos y cartillas</a></li>
+    
+      <li id="item160"><a href="transferencias-programadas.html" target="_self" title="Ir a la seccion">Transferencias Programadas</a></li>
+    
+      <li id="item161"><a href="transferencias.html" target="_self" title="Ir a la seccion">transferencias.html</a></li>
+    </ul>
+      </div>
+    
+      <div class="boxLetra" id="box_letra_U">
+        <h3>U</h3>
+        <ul id="ul_U">
+      <li id="item162"><a href="usoConsciente.html" target="_self" title="Ir a la seccion">Uso consciente del dinero</a></li>
+    </ul>
+      </div>
+    
+      <div class="boxLetra" id="box_letra_V">
+        <h3>V</h3>
+        <ul id="ul_V">
+      <li id="item163"><a href="objetivosViajes.html" target="_self" title="Ir a la seccion">Viajes</a></li>
+    
+      <li id="item164"><a href="tarjetaVisaCorporate.html" target="_self" title="Ir a la seccion">Visa Corporate</a></li>
+    
+      <li id="item165"><a href="tarjetaLatamPlatinum.html" target="_self" title="Ir a la seccion">Visa LATAM Pass Platinum</a></li>
+    
+      <li id="item166"><a href="tarjetaOnPlatinum.html" target="_self" title="Ir a la seccion">Visa On Platinum</a></li>
+    
+      <li id="item167"><a href="tarjetaVisaPuntaShopping.html" target="_self" title="Ir a la seccion">Visa Punta Shopping</a></li>
+    
+      <li id="item168"><a href="tarjetaVisaSaltoShopping.html" target="_self" title="Ir a la seccion">Visa Salto Shopping</a></li>
+    
+      <li id="item169"><a href="tarjetaVolarPlatinum.html" target="_self" title="Ir a la seccion">Visa Volar Platinum</a></li>
+    </ul>
+      </div>
+    
+      <div class="boxLetra" id="box_letra_�">
+        <h3>�</h3>
+        <ul id="ul_�">
+      <li id="item170"><a href="guiaBancaDigital.html" target="_self" title="Ir a la seccion">¿Necesitás ayuda?</a></li>
+    </ul>
+      </div>
+    
+          <br class="clear">
+        </div>
+      </div>
+    </div>
+    <div id="model_boxLetra" style="display:none;">
+      <div class="boxLetra" id="box_letra___tag__">
+        <h3>__tag__</h3>
+        <ul id="ul___tag__">__items__</ul>
+      </div>
+    </div>
+    
+    <div id="resizable" class="ui-widget-content">
+      <iframe id="webchat" src="/inst/chatbot/index.html"></iframe>
+    </div>
+    
+    
+    <div class="overlayMensajes" id="modalChat">
+      <div class="contMensajeRespuestaChat">
+        <p class="text-center">¿Te sirvió mi ayuda?</p>
+        <a class="close" href="javascript:;">✖</a>
+        <div class="formPopUp"><br>
+          <button class="btnNaranja btnSi" style="opacity: 1;">Si</button>
+          <button class="btnNaranja btnNo" style="opacity: 0.7;">No</button>
+          <br><br>
+          <textarea placeholder="Dejame tu comentario (opcional)"></textarea>
+          <input type="hidden" name="feedback" value="1">
+          <button class="right btnNaranja btnEnviar">Enviar</button>
+        </div>
+      </div>
+    </div>
+    
+    <div id="ads"></div><script src="https://analytics.twitter.com/i/adsct?type=javascript&amp;version=2.0.0&amp;p_id=Twitter&amp;p_user_id=0&amp;txn_id=nw62x&amp;tw_sale_amount=0&amp;tw_order_quantity=0&amp;tw_iframe_status=0&amp;tpx_cb=twttr.conversion.loadPixels&amp;tw_document_href=https%3A%2F%2Fwww.itau.com.uy%2Finst%2Fbeneficios.html%23%2Ftarjetas-credito" type="text/javascript"></script>
+    <script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","197011027887515");fbq("track","PageView");</script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=197011027887515&amp;ev=PageView&amp;noscript=1"></noscript>
+    
+    
+    
+    <script type="text/javascript" id="">(function(){var a=window,b=document,c=b.createElement("script");c.setAttribute("async","true");c.setAttribute("type","text/javascript");c.setAttribute("src","//c1.rfihub.net/js/tc.min.js");b=b.getElementsByTagName("script")[0];b.parentNode.insertBefore(c,b);"function"!==typeof a._rfi&&(a._rfi=function(){a._rfi.commands=a._rfi.commands||[];a._rfi.commands.push(arguments)});_rfi("setArgs","ver","9");_rfi("setArgs","rb","39195");_rfi("setArgs","ca","20818439");_rfi("setArgs","_o","39195");_rfi("setArgs",
+    "_t","20818439");_rfi("track")})();</script>
+    <noscript>
+      <iframe src="//20818439p.rfihub.com/ca.html?rb=39195&amp;ca=20818439&amp;_o=39195&amp;_t=20818439&amp;ra=1826500470" style="display:none;padding:0;margin:0" width="0" height="0">
+    </iframe>
+    </noscript>
+    </body>
+</html>
